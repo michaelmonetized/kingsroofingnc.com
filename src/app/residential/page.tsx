@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Layout } from "@/components/layout";
 import { SERVICES, MATERIALS, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ResidentialPage() {
   return (
-    <>
+    <Layout>
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-900 to-navy-800 text-white py-20">
         <div className="container mx-auto px-4">
@@ -164,7 +165,7 @@ export default function ResidentialPage() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 

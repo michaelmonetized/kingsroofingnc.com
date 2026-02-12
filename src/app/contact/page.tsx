@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Layout } from "@/components/layout";
 import { ContactForm } from "@/components/ContactForm";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <Layout>
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-900 to-navy-800 text-white py-16">
         <div className="container mx-auto px-4">
@@ -105,7 +106,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 

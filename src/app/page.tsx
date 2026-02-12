@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Layout } from "@/components/layout";
 import { COMPANY, SERVICE_AREAS, SERVICES } from "@/lib/constants";
 
 export default function HomePage() {
   return (
-    <>
+    <Layout>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
         {/* Background pattern */}
@@ -241,7 +242,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 
