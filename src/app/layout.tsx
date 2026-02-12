@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { COMPANY } from "@/lib/constants";
@@ -9,7 +9,7 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-display",
 });
@@ -53,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${plusJakarta.variable} antialiased`}>
+      <body className={`${inter.variable} ${oswald.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
