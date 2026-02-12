@@ -68,37 +68,55 @@ export const MATERIALS = [
 
 export const NAVIGATION = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { 
     label: "Residential", 
     href: "/residential",
     children: [
-      { label: "All Residential", href: "/residential" },
       { label: "Asheville", href: "/residential/asheville" },
-      { label: "Waynesville", href: "/residential/waynesville" },
-      { label: "Highlands", href: "/residential/highlands" },
       { label: "Cashiers", href: "/residential/cashiers" },
+      { label: "Highlands", href: "/residential/highlands" },
+      { label: "Waynesville", href: "/residential/waynesville" },
     ]
   },
   { label: "Commercial", href: "/commercial" },
   { 
+    label: "Roofing Color Pickers", 
+    href: "/roofing-color-pickers",
+    children: [
+      { label: "Metal Roofing", href: "/roofing-color-pickers/metal-roofing" },
+      { label: "Shingles", href: "/roofing-color-pickers/shingles" },
+    ]
+  },
+  { 
     label: "Metal Structures", 
     href: "/metal-structures",
     children: [
-      { label: "All Metal Structures", href: "/metal-structures" },
-      { label: "Boxed Eave Carports", href: "/boxed-eave-style-metal-carport" },
-      { label: "Regular Style Carports", href: "/regular-style-metal-carports" },
-      { label: "Vertical Roof Carports", href: "/vertical-roof-style-metal-carport" },
-      { label: "Pole Truss Enclosed Kits", href: "/pole-truss-enclosed-kits" },
-      { label: "Pole Truss Stand Roof Kit", href: "/pole-truss-stand-roof-kit" },
+      { 
+        label: "Metal Carport Kits", 
+        href: "/metal-structures/metal-carport-kits",
+        children: [
+          { label: "Regular Style Metal Carport", href: "/regular-style-metal-carports" },
+          { label: "Boxed Eave Style Metal Carport", href: "/boxed-eave-style-metal-carport" },
+          { label: "Vertical Roof Style Metal Carport", href: "/vertical-roof-style-metal-carport" },
+        ]
+      },
+      { 
+        label: "Pole Truss Kits", 
+        href: "/metal-structures/pole-truss-kits",
+        children: [
+          { label: "Stand Roof Kit", href: "/pole-truss-stand-roof-kit" },
+          { label: "Enclosed Kits", href: "/pole-truss-enclosed-kits" },
+        ]
+      },
     ]
   },
-  { label: "Color Pickers", href: "/roofing-color-pickers" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const LOCATION_PAGES = [
-  { slug: "waynesville", name: "Waynesville", county: "Haywood County" },
-  { slug: "highlands", name: "Highlands", county: "Macon County" },
+  { slug: "asheville", name: "Asheville", county: "Buncombe County" },
   { slug: "cashiers", name: "Cashiers", county: "Jackson County" },
+  { slug: "highlands", name: "Highlands", county: "Macon County" },
+  { slug: "waynesville", name: "Waynesville", county: "Haywood County" },
 ] as const;
