@@ -181,10 +181,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: "Asheville", slug: "asheville", image: "/images/Asheville-Roofing-Contractor.jpg" },
-              { name: "Cashiers", slug: "cashiers", image: "/images/Cashiers-Roofing-Contractor.jpg" },
-              { name: "Highlands", slug: "highlands", image: "/images/Highlands-Roofing-Contractor.jpg" },
-              { name: "Waynesville", slug: "waynesville", image: "/images/Waynesville-Roofing-Contractor.jpg" },
+              { name: "Asheville", slug: "asheville" },
+              { name: "Cashiers", slug: "cashiers" },
+              { name: "Highlands", slug: "highlands" },
+              { name: "Waynesville", slug: "waynesville" },
             ].map((location) => (
               <Link
                 key={location.slug}
@@ -192,14 +192,15 @@ export default function Home() {
                 className="group relative h-48 lg:h-64 rounded-lg overflow-hidden"
               >
                 <Image
-                  src={location.image}
+                  src="/images/timberline-large-slate.jpeg"
                   alt={`${location.name} Roofing Contractor`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-display font-bold text-lg">{location.name} Roofing Contractor</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <h3 className="font-display font-bold text-xl uppercase">{location.name}</h3>
+                  <p className="text-sm text-white/80">Roofing Contractor</p>
                 </div>
               </Link>
             ))}
