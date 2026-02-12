@@ -5,6 +5,15 @@ import { Layout } from "@/components/layout";
 import { COMPANY } from "@/lib/constants";
 
 const LOCATIONS = {
+  asheville: {
+    name: "Asheville",
+    county: "Buncombe County",
+    title: "Asheville Roofing Contractor | Kings Roofing, inc.",
+    headline: "Asheville Roofing Contractor",
+    intro: "Our roofing contractors are located in the beautiful town of Asheville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
+    body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Asheville team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
+    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
+  },
   waynesville: {
     name: "Waynesville",
     county: "Haywood County",
