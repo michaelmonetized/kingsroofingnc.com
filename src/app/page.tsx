@@ -7,8 +7,19 @@ import { QuoteForm } from "@/components/QuoteForm";
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section - White bg with orange CTA */}
-      <section className="bg-white py-12 lg:py-16">
+      {/* Hero Roof Image Banner */}
+      <section className="relative h-32 lg:h-48">
+        <Image
+          src="/images/timberline-large-slate.jpeg"
+          alt="Metal roofing"
+          fill
+          className="object-cover"
+          priority
+        />
+      </section>
+
+      {/* Hero Content - White bg with orange CTA */}
+      <section className="bg-white py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             {/* Left - Content */}
@@ -16,20 +27,20 @@ export default function Home() {
               <Image
                 src="/images/KINGS-7-5-1.png"
                 alt="Kings Roofing Lion Logo"
-                width={120}
-                height={120}
-                className="mb-4"
+                width={100}
+                height={100}
+                className="mb-3"
               />
-              <h2 className="font-display text-orange-500 font-bold text-xl uppercase tracking-wider mb-1">
+              <h2 className="font-display text-orange-500 font-bold text-lg uppercase tracking-wider mb-0">
                 Residential &amp; Commercial
               </h2>
-              <h1 className="font-display text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-2">
+              <h1 className="font-display text-3xl lg:text-4xl font-black text-gray-900 uppercase tracking-tight mb-1">
                 Roofing Contractor
               </h1>
-              <p className="text-orange-500 font-semibold text-lg mb-4">
+              <p className="text-orange-500 font-semibold mb-3">
                 Get Your FREE Quote Today
               </p>
-              <div className="text-gray-700 space-y-4 text-sm leading-relaxed">
+              <div className="text-gray-700 space-y-3 text-sm leading-relaxed">
                 <p>
                   When you choose <Link href="/contact" className="text-orange-500 underline">Kings Roofing</Link> for your next{" "}
                   <Link href="/residential" className="text-orange-500 underline">residential</Link> or{" "}
@@ -48,19 +59,19 @@ export default function Home() {
             </div>
 
             {/* Right - Orange CTA Box */}
-            <div className="bg-orange-500 text-white p-8 rounded-lg shadow-lg">
-              <h3 className="font-display text-3xl font-black uppercase text-center mb-2">
+            <div className="bg-orange-500 text-white p-6 lg:p-8">
+              <h3 className="font-display text-2xl lg:text-3xl font-black uppercase text-center mb-1">
                 Get A<br />Free Quote
               </h3>
-              <p className="text-center text-orange-100 mb-4">- or -</p>
-              <p className="font-display text-4xl font-black uppercase text-center mb-2">Call:</p>
+              <p className="text-center text-white/80 text-sm mb-2">- or -</p>
+              <p className="font-display text-2xl font-black uppercase text-center mb-0">Call:</p>
               <a 
                 href={`tel:${COMPANY.phone}`}
-                className="block font-display text-4xl lg:text-5xl font-black text-center hover:underline"
+                className="block font-display text-3xl lg:text-4xl font-black text-center hover:underline"
               >
                 {COMPANY.phone}
               </a>
-              <div className="mt-6">
+              <div className="mt-4">
                 <QuoteForm variant="light" />
               </div>
             </div>
@@ -100,30 +111,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Re-Roofing Section - Orange */}
+      {/* Re-Roofing Section - Orange with Lion */}
       <section className="bg-orange-500 py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="relative h-80 lg:h-96 rounded-lg overflow-hidden">
+            {/* Lion illustration on left */}
+            <div className="flex justify-center lg:justify-end">
               <Image
-                src="/images/roof-repair-full.jpeg"
-                alt="Re-roofing services"
-                fill
-                className="object-cover"
+                src="/images/Leaping-Lion-Vector.svg"
+                alt="Kings Roofing Lion"
+                width={300}
+                height={300}
+                className="w-48 lg:w-72 h-auto opacity-90"
               />
             </div>
+            {/* Text on right */}
             <div className="text-white">
               <h2 className="font-display text-4xl lg:text-5xl font-black uppercase tracking-tight mb-2">
                 Re-Roofing
               </h2>
-              <h3 className="text-white/90 font-bold text-xl mb-1">Old roof? Damaged roof?</h3>
-              <h4 className="text-yellow-300 font-bold text-lg mb-4">King&apos;s has you covered.</h4>
-              <p className="text-white/90 mb-6">
+              <h3 className="text-white font-bold text-lg mb-1">Old roof?<br />Damaged roof?</h3>
+              <h4 className="text-yellow-300 font-bold mb-4">King&apos;s has you covered.</h4>
+              <p className="text-white/90 text-sm mb-6">
                 Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality roofing contractors can help. Let our Asheville based roofing contractors put years of experience in roofing services to work for you at the most reasonable prices around.
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-white text-orange-500 hover:bg-orange-100 px-6 py-3 rounded font-bold transition-colors"
+                className="inline-block border-2 border-white text-white hover:bg-white hover:text-orange-500 px-6 py-2 font-bold transition-colors"
               >
                 Get Started Today
               </Link>
