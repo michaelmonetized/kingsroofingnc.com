@@ -107,11 +107,16 @@ export default function Home() {
                 Get Started Today
               </Link>
             </div>
-            <div className="bg-black aspect-video">
-              {/* Video placeholder - YouTube embed would go here */}
-              <div className="w-full h-full flex items-center justify-center text-white">
-                <span>Video</span>
-              </div>
+            <div className="aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/rJJt1UbFzVM"
+                title="Kings Roofing Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>

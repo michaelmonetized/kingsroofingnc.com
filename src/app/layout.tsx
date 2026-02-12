@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Roboto, Roboto_Slab } from "next/font/google";
+import { Poppins, Roboto, Roboto_Slab, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { COMPANY } from "@/lib/constants";
@@ -20,6 +20,12 @@ const robotoSlab = Roboto_Slab({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
   variable: "--font-roboto-slab",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -61,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} ${robotoSlab.variable} antialiased`}>
+      <body className={`${poppins.variable} ${roboto.variable} ${robotoSlab.variable} ${inter.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -31,7 +31,7 @@ body {
 
 /* Stylized heading class - matches Elementor text-stroke effect */
 .heading-stylized {
-  font-family: var(--font-roboto-slab), serif;
+  font-family: var(--font-inter), sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   -webkit-text-stroke-width: 3px;
@@ -41,7 +41,7 @@ body {
 }
 
 .heading-stylized-white {
-  font-family: var(--font-roboto-slab), serif;
+  font-family: var(--font-inter), sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   -webkit-text-stroke-width: 3px;
