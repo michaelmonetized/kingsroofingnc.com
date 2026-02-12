@@ -5,8 +5,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { COMPANY, NAVIGATION } from "@/lib/constants";
 
+type NavItem = {
+  label: string;
+  href: string;
+  children?: readonly { label: string; href: string }[];
+};
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 bg-gray-900 shadow-lg">
@@ -49,15 +57,43 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-8">
-            {NAVIGATION.map((item) => (
-              <Link
+          <div className="hidden lg:flex items-center gap-6">
+            {(NAVIGATION as readonly NavItem[]).map((item) => (
+              <div
                 key={item.href}
-                href={item.href}
-                className="text-gray-300 hover:text-orange-400 font-medium transition-colors"
+                className="relative"
+                onMouseEnter={() => item.children && setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {item.label}
-              </Link>
+                {item.children ? (
+                  <>
+                    <button className="flex items-center gap-1 text-gray-300 hover:text-orange-400 font-medium transition-colors py-2">
+                      {item.label}
+                      <ChevronDownIcon className="w-4 h-4" />
+                    </button>
+                    {openDropdown === item.label && (
+                      <div className="absolute top-full left-0 mt-0 w-56 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-2 z-50">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : item.label === "Contact" ? null : (
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-orange-400 font-medium transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
             ))}
             <Link
               href="/contact"
@@ -84,16 +120,43 @@ export function Header() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4 border-t border-gray-700">
-            <div className="flex flex-col gap-2 pt-4">
-              {NAVIGATION.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-lg font-medium"
-                >
-                  {item.label}
-                </Link>
+            <div className="flex flex-col gap-1 pt-4">
+              {(NAVIGATION as readonly NavItem[]).map((item) => (
+                <div key={item.href}>
+                  {item.children ? (
+                    <>
+                      <button
+                        onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                        className="w-full flex items-center justify-between px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-lg font-medium"
+                      >
+                        {item.label}
+                        <ChevronDownIcon className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`} />
+                      </button>
+                      {mobileExpanded === item.label && (
+                        <div className="ml-4 border-l border-gray-700 pl-4 mt-1 space-y-1">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block px-4 py-2 text-gray-400 hover:text-orange-400 rounded-lg text-sm"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : item.label === "Contact" ? null : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-lg font-medium block"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
               ))}
               <Link
                 href="/contact"
@@ -130,6 +193,14 @@ function CloseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  );
+}
+
+function ChevronDownIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
     </svg>
   );
 }

@@ -68,8 +68,32 @@ export const MATERIALS = [
 
 export const NAVIGATION = [
   { label: "Home", href: "/" },
-  { label: "Residential", href: "/residential" },
+  { 
+    label: "Residential", 
+    href: "/residential",
+    children: [
+      { label: "All Residential", href: "/residential" },
+      { label: "Asheville", href: "/residential/asheville" },
+      { label: "Waynesville", href: "/residential/waynesville" },
+      { label: "Highlands", href: "/residential/highlands" },
+      { label: "Cashiers", href: "/residential/cashiers" },
+    ]
+  },
   { label: "Commercial", href: "/commercial" },
+  { 
+    label: "Metal Structures", 
+    href: "/metal-structures",
+    children: [
+      { label: "All Metal Structures", href: "/metal-structures" },
+      { label: "Boxed Eave Carports", href: "/boxed-eave-style-metal-carport" },
+      { label: "Regular Style Carports", href: "/regular-style-metal-carports" },
+      { label: "Vertical Roof Carports", href: "/vertical-roof-style-metal-carport" },
+      { label: "Pole Truss Enclosed Kits", href: "/pole-truss-enclosed-kits" },
+      { label: "Pole Truss Stand Roof Kit", href: "/pole-truss-stand-roof-kit" },
+    ]
+  },
+  { label: "Color Pickers", href: "/roofing-color-pickers" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
