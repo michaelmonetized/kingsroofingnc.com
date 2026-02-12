@@ -1,244 +1,323 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
+import { HeroContactForm } from "@/components/HeroContactForm";
 import { COMPANY, SERVICE_AREAS, SERVICES } from "@/lib/constants";
 
 export default function HomePage() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[800px] lg:min-h-[700px] bg-gray-900">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Professional roofing work"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
 
-        <div className="container mx-auto px-4 py-20 lg:py-32 relative">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-accent-500/20 text-accent-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-accent-400 rounded-full animate-pulse" />
-              Serving Western NC Since 2010
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Residential & Commercial
-              <span className="block text-accent-400">Roofing Contractor</span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-              When you choose Kings Roofing for your next roofing project, you&apos;re choosing 
-              excellence and peace of mind. Quality materials, expert craftsmanship, and 
-              competitive pricing.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                <span>Get Your FREE Quote Today</span>
-                <ArrowIcon className="w-5 h-5" />
-              </Link>
-              <a
-                href={`tel:${COMPANY.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg border border-white/20"
-              >
-                <PhoneIcon className="w-5 h-5" />
-                <span>Call {COMPANY.phone}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust badges */}
-        <div className="bg-navy-950/50 border-t border-white/10">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-slate-300">
-              <div className="flex items-center gap-2">
-                <CheckIcon className="w-5 h-5 text-accent-400" />
-                <span>Licensed & Insured</span>
+        <div className="relative container mx-auto px-4 py-12 lg:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Headlines */}
+            <div className="text-white pt-8">
+              {/* Lion Logo */}
+              <div className="mb-6">
+                <Image
+                  src="/images/KINGS-7-5-1.png"
+                  alt="Kings Roofing Lion Logo"
+                  width={120}
+                  height={120}
+                  className="drop-shadow-2xl"
+                />
               </div>
-              <div className="flex items-center gap-2">
-                <CheckIcon className="w-5 h-5 text-accent-400" />
-                <span>Free Estimates</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckIcon className="w-5 h-5 text-accent-400" />
-                <span>GAF Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckIcon className="w-5 h-5 text-accent-400" />
-                <span>Lifetime Warranties</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Our Roofing Services
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              From new installations to emergency repairs, we handle all your roofing needs 
-              with professionalism and expertise.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* New Roof */}
-            <ServiceCard
-              icon={<HomeIcon className="w-8 h-8" />}
-              title="New Roof Installation"
-              description="Need a roof for your new home or construction project? We install quality roofing systems using premium materials from GAF, CertainTeed, and more."
-              href="/residential"
-            />
-
-            {/* Roof Repair */}
-            <ServiceCard
-              icon={<WrenchIcon className="w-8 h-8" />}
-              title="Roof Repair"
-              description="Leaky roof? Storm damage? Our expert team handles all types of repairs including emergency services, flashing, vents, and preventative maintenance."
-              href="/residential"
-            />
-
-            {/* Commercial */}
-            <ServiceCard
-              icon={<BuildingIcon className="w-8 h-8" />}
-              title="Commercial Roofing"
-              description="We have dozens of commercial projects in WNC showcasing our quality work. From re-shingling to flat roof systems, we've got you covered."
-              href="/commercial"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Roof Repair Details */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-                Leaky Roof? We Can Help!
+              <h2 className="text-orange-400 text-xl md:text-2xl font-bold tracking-wider mb-2">
+                RESIDENTIAL &amp; COMMERCIAL
               </h2>
-              <p className="text-lg text-slate-600 mb-8">
-                Our roofing contractors handle all types of roof repairs. Whether your roof 
-                just needs a minor repair or needs to be replaced altogether, our team of 
-                quality roofing contractors can help.
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+                Roofing<br />Contractor
+              </h1>
+              
+              <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-lg leading-relaxed">
+                When you choose Kings Roofing for your next roofing project, you are choosing 
+                excellence and peace of mind. Our expert team delivers top-notch services with 
+                the highest quality materials.
               </p>
-              <ul className="grid grid-cols-2 gap-3">
-                {SERVICES.repairs.slice(0, 8).map((service) => (
-                  <li key={service} className="flex items-center gap-2 text-slate-700">
-                    <CheckIcon className="w-5 h-5 text-accent-500 flex-shrink-0" />
-                    <span className="text-sm">{service}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 mt-8 bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-semibold"
-              >
-                Get a Free Estimate
-                <ArrowIcon className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 lg:p-12">
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-bold text-navy-900 mb-4">Premium Materials</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-slate-700">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                    GAF Timberline HD Shingles
-                  </li>
-                  <li className="flex items-center gap-3 text-slate-700">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                    Best Buy Metal Roofing
-                  </li>
-                  <li className="flex items-center gap-3 text-slate-700">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                    CertainTeed Products
-                  </li>
-                  <li className="flex items-center gap-3 text-slate-700">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                    20-Year to Lifetime Warranties
-                  </li>
-                </ul>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a
+                  href={`tel:${COMPANY.phone}`}
+                  className="inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-xl shadow-lg transition-all"
+                >
+                  <PhoneIcon className="w-6 h-6" />
+                  {COMPANY.phone}
+                </a>
               </div>
+
+              {/* Service Areas Preview */}
+              <div className="text-gray-300 text-sm">
+                <span className="text-orange-400 font-semibold">Proudly serving:</span>{" "}
+                Asheville, Waynesville, Highlands, Cashiers &amp; all of Western NC
+              </div>
+            </div>
+
+            {/* Right Side - Quote Form */}
+            <div className="bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-2xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-2 text-center">
+                Get Your FREE Quote Today
+              </h3>
+              <p className="text-gray-400 text-center mb-6 text-sm">
+                We respond within 24 hours
+              </p>
+              <HeroContactForm />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-20 bg-navy-900 text-white">
+      {/* Trust Badges */}
+      <section className="bg-gray-800 py-6 border-y border-gray-700">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Serving Western North Carolina
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-white">
+            <TrustBadge icon="✓" text="Licensed & Insured" />
+            <TrustBadge icon="★" text="GAF Certified" />
+            <TrustBadge icon="◐" text="Free Estimates" />
+            <TrustBadge icon="⟳" text="Quality Since 2010" />
+          </div>
+        </div>
+      </section>
+
+      {/* New Roof Installation Section - With Background */}
+      <section className="relative py-20 min-h-[500px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/roof-repair-full.jpeg"
+            alt="New roof installation"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              New Roof Installation
             </h2>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              For over a decade, we&apos;ve been a leading roofing contractor in Western NC. 
-              When you need a roofer, remember King&apos;s Haywood Construction.
+            <h3 className="text-xl text-orange-400 font-semibold mb-4">
+              New Home? Need A Roof? You came to the right place!
+            </h3>
+            <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+              We have dozens of commercial projects in the WNC area that boast our quality work. 
+              Whether you need a re-shingle or flat top system, we are here to replace your current 
+              system quickly and efficiently.
             </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {SERVICE_AREAS.map((area) => (
-              <div
-                key={area}
-                className="bg-white/10 px-5 py-2.5 rounded-full text-sm font-medium"
-              >
-                {area}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg"
+              href="/residential"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-colors"
             >
-              Request a Free Quote
+              Learn More
               <ArrowIcon className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* About / Trust Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-              Why Choose Kings Roofing?
-            </h2>
-            <p className="text-lg text-slate-600 mb-12">
-              Most homeowners won&apos;t refer their roofing contractor, but we get most of our 
-              work from referrals — and that speaks for itself. We offer the highest quality 
-              and professionalism you can&apos;t find anywhere else.
-            </p>
+      {/* Re-Roofing Section */}
+      <section className="relative py-20 min-h-[500px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/timberline-large-slate.jpeg"
+            alt="Re-roofing services"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/60 to-transparent" />
+        </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <TrustCard
-                icon={<StarIcon className="w-10 h-10" />}
-                title="Quality Work"
-                description="Over a decade of quality roofing installations and repairs throughout Western NC."
-              />
-              <TrustCard
-                icon={<ShieldIcon className="w-10 h-10" />}
-                title="Reliable & Trustworthy"
-                description="Licensed, insured, and committed to doing the job right the first time."
-              />
-              <TrustCard
-                icon={<DollarIcon className="w-10 h-10" />}
-                title="Competitive Pricing"
-                description="Quality roofing at the most reasonable prices in Western North Carolina."
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-2xl ml-auto text-right">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Old roof? Damaged roof?
+            </h2>
+            <h3 className="text-2xl text-orange-400 font-semibold mb-4">
+              King&apos;s has you covered.
+            </h3>
+            <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+              Whether your roof just needs a minor repair or needs to be replaced altogether, 
+              our team of quality roofing contractors can help. Let our Asheville based roofing 
+              contractors put years of experience to work for you.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-colors"
+            >
+              Get a Quote
+              <ArrowIcon className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Roof Repair Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Roof Repair
+              </h2>
+              <h3 className="text-xl text-orange-500 font-semibold mb-6">
+                Leaky roof? We can help!
+              </h3>
+              <p className="text-lg text-gray-700 mb-8">
+                Our roofing contractors handle all types of roof repairs including:
+              </p>
+              
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                {SERVICES.repairs.map((service) => (
+                  <li key={service} className="flex items-center gap-2 text-gray-700">
+                    <span className="text-orange-500 font-bold">•</span>
+                    {service}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-gray-700 mb-8">
+                Kings Roofing is your #1 roofing company in Asheville. Specializing in new 
+                GAF Timberline HD shingle roofing and Best Buy Metal roofing.
+              </p>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-lg transition-colors"
+              >
+                Get Free Estimate
+                <ArrowIcon className="w-5 h-5" />
+              </Link>
+            </div>
+
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/roof-repair-1024x683.jpeg"
+                alt="Roof repair services"
+                fill
+                className="object-cover"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Cards Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Serving Western North Carolina
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              For over a decade, we&apos;ve been a leading roofing contractor in Western NC. 
+              When you need a roofer, remember King&apos;s Haywood Construction.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <LocationCard name="Asheville" description="Buncombe County's largest city" />
+            <LocationCard name="Cashiers" href="/residential/cashiers" description="Jackson County" />
+            <LocationCard name="Highlands" href="/residential/highlands" description="Macon County" />
+            <LocationCard name="Waynesville" href="/residential/waynesville" description="Haywood County" />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {SERVICE_AREAS.map((area) => (
+              <span
+                key={area}
+                className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roofers in Asheville Section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <Image
+                src="/images/KINGS-7-5-1.png"
+                alt="Kings Roofing Lion Logo"
+                width={300}
+                height={300}
+                className="drop-shadow-2xl"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Roofers in Asheville NC
+              </h2>
+              <h3 className="text-xl text-orange-400 font-semibold mb-6">
+                serving residential and commercial clients across Western North Carolina
+              </h3>
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                Kings Roofing serves Asheville, Highlands, Waynesville, Sylva, Bryson City, 
+                Cashiers, and Canton. For over a decade, we have been a leading Western North 
+                Carolina roofing and framing contractor.
+              </p>
+              <p className="text-gray-300 mb-6">
+                We are an Asheville Roofing Contracting Company offering quality and affordability. 
+                We are reliable, trustworthy, affordable, and have dozens and dozens of referrals 
+                to prove it.
+              </p>
+              <p className="text-gray-300 mb-8">
+                Whether you need roofing installation, roofing repair, or any other roofing service, 
+                our whole roof contracting team is energetic, easy-going, and ready to get the 
+                roofing job done right the first time.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-colors"
+              >
+                Request a Free Quote
+                <ArrowIcon className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-orange-500">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Contact us today for a free, no-obligation quote on your roofing project.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-gray-900 font-bold px-8 py-4 rounded-lg transition-colors"
+            >
+              Get Your Free Quote
+            </Link>
+            <a
+              href={`tel:${COMPANY.phone}`}
+              className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-lg transition-colors"
+            >
+              <PhoneIcon className="w-5 h-5" />
+              Call {COMPANY.phone}
+            </a>
           </div>
         </div>
       </section>
@@ -246,61 +325,42 @@ export default function HomePage() {
   );
 }
 
-function ServiceCard({
-  icon,
-  title,
-  description,
-  href,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  href: string;
-}) {
+function TrustBadge({ icon, text }: { icon: string; text: string }) {
   return (
-    <Link
-      href={href}
-      className="group bg-white rounded-xl shadow-sm hover:shadow-lg p-8 border border-slate-100 transition-all"
-    >
-      <div className="w-14 h-14 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold text-navy-900 mb-3">{title}</h3>
-      <p className="text-slate-600 mb-4">{description}</p>
-      <span className="inline-flex items-center gap-1 text-accent-600 font-medium group-hover:gap-2 transition-all">
-        Learn more <ArrowIcon className="w-4 h-4" />
-      </span>
-    </Link>
-  );
-}
-
-function TrustCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="text-center">
-      <div className="w-16 h-16 bg-navy-100 text-navy-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-        {icon}
-      </div>
-      <h3 className="text-lg font-bold text-navy-900 mb-2">{title}</h3>
-      <p className="text-slate-600 text-sm">{description}</p>
+    <div className="flex items-center gap-2 text-sm md:text-base">
+      <span className="text-orange-400 text-xl">{icon}</span>
+      <span className="font-medium">{text}</span>
     </div>
   );
 }
 
-// Icons
-function ArrowIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-    </svg>
+function LocationCard({ 
+  name, 
+  description, 
+  href 
+}: { 
+  name: string; 
+  description: string; 
+  href?: string;
+}) {
+  const content = (
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+      <div className="h-32 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+        <span className="text-6xl opacity-20">🏠</span>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">
+          {name}
+        </h3>
+        <p className="text-gray-400 text-sm">{description}</p>
+      </div>
+    </div>
   );
+
+  if (href) {
+    return <Link href={href}>{content}</Link>;
+  }
+  return content;
 }
 
 function PhoneIcon({ className }: { className?: string }) {
@@ -311,59 +371,10 @@ function PhoneIcon({ className }: { className?: string }) {
   );
 }
 
-function CheckIcon({ className }: { className?: string }) {
+function ArrowIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
-
-function HomeIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-    </svg>
-  );
-}
-
-function WrenchIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  );
-}
-
-function BuildingIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-    </svg>
-  );
-}
-
-function StarIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
-  );
-}
-
-function DollarIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
     </svg>
   );
 }
