@@ -2,41 +2,35 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Layout } from "@/components/layout";
-import { COMPANY, SERVICES } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
 
 const LOCATIONS = {
   waynesville: {
     name: "Waynesville",
     county: "Haywood County",
-    description: "Your trusted roofing contractor in Waynesville and Haywood County. Kings Roofing provides quality roof installation, repair, and replacement services to homeowners and businesses in Waynesville, NC.",
-    features: [
-      "Local Haywood County roofing experts",
-      "GAF certified shingle installation",
-      "Storm damage repair specialists",
-      "Free on-site estimates",
-    ],
+    title: "Waynesville Roofing Contractors | Kings Roofing, inc.",
+    headline: "Waynesville Roofing Contractors",
+    intro: "Waynesville, NC is our home base. We have been replacing roofs in Haywood County for over a decade. Our roofing contractors are located in the beautiful town of Waynesville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
+    body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Waynesville roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
+    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
   },
   highlands: {
     name: "Highlands",
     county: "Macon County",
-    description: "Professional roofing services for Highlands and the surrounding mountain communities. From luxury homes to commercial properties, Kings Roofing delivers exceptional craftsmanship in Highlands, NC.",
-    features: [
-      "Mountain home roofing specialists",
-      "Slate and premium shingle options",
-      "High-altitude roofing expertise",
-      "Weather-resistant installations",
-    ],
+    title: "Highlands Roofing Contractor | Kings Roofing, inc.",
+    headline: "Highlands Roofing Contractor",
+    intro: "Highlands is one of the most beautiful areas of Western North Carolina, which is why we love serving the beautiful people that live here. Our Highlands Roofing Contractors are among the most qualified around.",
+    body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Highlands team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
+    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
   },
   cashiers: {
     name: "Cashiers",
     county: "Jackson County",
-    description: "Expert roofing contractor serving Cashiers and Jackson County. Kings Roofing offers comprehensive roofing solutions for the Cashiers community, from new construction to repairs.",
-    features: [
-      "Serving Cashiers and Lake Glenville",
-      "Custom roofing solutions",
-      "Metal and shingle roofing",
-      "Emergency repair services",
-    ],
+    title: "Cashiers Roofing Contractors | Kings Roofing, inc.",
+    headline: "Cashiers Roofing Contractors",
+    intro: "Cashiers is one of our favorite towns in WNC, and we try to serve her wonderful residents as often as possible. Allow the locally owned Kings Roofing a the opportunity to take on your next project!",
+    body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Highlands roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
+    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
   },
 };
 
@@ -61,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `Roofer in ${locationData.name} NC | Roofing Contractor`,
+    title: locationData.title,
     description: `Professional roofing contractor in ${locationData.name}, NC. New roof installation, repairs, and replacement in ${locationData.county}. Free estimates! Call ${COMPANY.phone}.`,
   };
 }
@@ -77,26 +71,34 @@ export default async function LocationPage({ params }: PageProps) {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-900 to-navy-800 text-white py-20">
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-accent-500/20 text-accent-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <MapPinIcon className="w-4 h-4" />
-              Serving {locationData.county}
-            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Roofing Contractor in<br />
-              <span className="text-accent-400">{locationData.name}, NC</span>
+              {locationData.headline}
             </h1>
-            <p className="text-xl text-slate-300 mb-8">
-              {locationData.description}
+            <p className="text-xl text-gray-300 mb-6">
+              {locationData.intro}
+            </p>
+            <p className="text-xl text-gray-300 mb-6">
+              {locationData.body}
+            </p>
+            <p className="text-lg text-gray-300 mb-8">
+              {locationData.cta.split("828-279-6896").map((part, i, arr) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && (
+                    <a href="tel:828-279-6896" className="text-orange-400 hover:underline">828-279-6896</a>
+                  )}
+                </span>
+              ))}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold"
+                className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold"
               >
-                Get a Free Quote in {locationData.name}
+                Get a Free Quote
               </Link>
               <a
                 href={`tel:${COMPANY.phone}`}
@@ -109,127 +111,126 @@ export default async function LocationPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16">
+      {/* Roof Replacement */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-navy-900 mb-6">
-                Why {locationData.name} Homeowners Choose Kings Roofing
-              </h2>
-              <p className="text-lg text-slate-600 mb-8">
-                For over a decade, Kings Roofing has been the trusted roofing contractor for 
-                {locationData.name} and {locationData.county}. We understand the unique challenges 
-                that Western NC weather presents and build roofs that last.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {locationData.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-accent-500 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-slate-50 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-navy-900 mb-6">
-                Our Services in {locationData.name}
-              </h3>
-              <ul className="space-y-3">
-                {[...SERVICES.residential.slice(0, 4), ...SERVICES.repairs.slice(0, 4)].map((service) => (
-                  <li key={service} className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                    <span className="text-slate-700">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Local Trust */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-navy-900 mb-6">
-              Trusted {locationData.name} Roofing Experts
-            </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              As a local Western NC roofing company, we take pride in serving our neighbors 
-              in {locationData.name} and throughout {locationData.county}. Our reputation is 
-              built on quality work, honest pricing, and exceptional customer service.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <TrustBadge
-                title="Licensed & Insured"
-                description="Fully licensed roofing contractor in North Carolina"
-              />
-              <TrustBadge
-                title="10+ Years Experience"
-                description="Serving Western NC homeowners since 2010"
-              />
-              <TrustBadge
-                title="Free Estimates"
-                description="No-obligation quotes for all roofing projects"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-navy-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready for Your Free Roofing Quote in {locationData.name}?
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            Roof Replacement
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-            Contact Kings Roofing today for a free, no-obligation estimate on your roofing 
-            project. We serve all of {locationData.name} and {locationData.county}.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold"
-            >
-              Get Your Free Quote
-            </Link>
-            <a
-              href={`tel:${COMPANY.phone}`}
-              className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold border border-white/20"
-            >
-              Call {COMPANY.phone}
-            </a>
+          <ul className="space-y-4 max-w-3xl">
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">CertainTeed &amp; GAF full-color shingle</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">New roof construction &amp; installation.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">Re-Roofing and tear-offs.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">All types of shingles; 3-tab, asphalt, fiberglass, architectural, premium designer, steel, metal, composite, shakes, and genuine slate.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">Manufacturers warranties from 20 years to lifetime.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-700 text-lg">Learn about EnergyStar tax credits up to $1500 for roofing material.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Materials */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            Experienced Roofing Contractors with knowledge of all Roofing Materials, including:
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl">
+            {[
+              "Shingle Roofing",
+              "Asphalt Roofing",
+              "Wood Roofing",
+              "Slate Roofing",
+              "Shakes Roofing",
+              "Metal Roofing",
+              "Rubber Roofing",
+            ].map((material) => (
+              <div
+                key={material}
+                className="bg-gray-100 p-4 rounded-lg text-center"
+              >
+                <span className="font-medium text-gray-900">{material}</span>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Roof Repair */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            Roof Repair
+          </h2>
+          <ul className="space-y-4 max-w-3xl">
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Residential/Commercial</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">We handle all types of roof repairs including emergency repairs.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Roof, chimney, and skylight leaks. Wind, hail, or tree limb damage. Flashing repair.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Roof air vents/ridge caps</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Roof drains/pipe boot replacement. Ice dams/water backup.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Roof inspections</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold mt-1">•</span>
+              <span className="text-gray-300 text-lg">Preventative maintenance. Gutters/siding.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-orange-500">
+        <div className="container mx-auto px-4 text-center">
+          <div className="space-y-4 mb-8">
+            <p className="text-2xl text-white font-semibold">
+              <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>
+            </p>
+            <p className="text-xl text-white">
+              <a href="mailto:kingshaywood@gmail.com" className="hover:underline">kingshaywood@gmail.com</a>
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg"
+          >
+            Free Quotes…
+          </Link>
         </div>
       </section>
     </Layout>
-  );
-}
-
-function TrustBadge({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <h3 className="font-bold text-navy-900 mb-2">{title}</h3>
-      <p className="text-slate-600 text-sm">{description}</p>
-    </div>
-  );
-}
-
-function MapPinIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  );
-}
-
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
   );
 }
