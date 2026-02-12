@@ -26,7 +26,7 @@ const LOCATIONS = {
   highlands: {
     name: "Highlands",
     county: "Macon County",
-    title: "Highlands Roofing Contractor | Kings Roofing, inc.",
+    title: "Highlands Roofing Contractor |  Kings Roofing, inc.",
     headline: "Highlands Roofing Contractor",
     intro: "Highlands is one of the most beautiful areas of Western North Carolina, which is why we love serving the beautiful people that live here. Our Highlands Roofing Contractors are among the most qualified around.",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Highlands team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
@@ -224,6 +224,7 @@ export default async function LocationPage({ params }: PageProps) {
       {/* Contact Section */}
       <section className="py-20 bg-orange-500">
         <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
               <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>

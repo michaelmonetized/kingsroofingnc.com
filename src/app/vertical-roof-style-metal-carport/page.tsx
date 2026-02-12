@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout";
 import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Kings Roofing, inc. | Vertical Roof Style Metal Carport",
+  title: "Kings Roofing, inc. | Vertical Roof Style Metal Carport​",
   description: "Vertical roof style metal carport - the strongest roof style available. Quality metal carports in Western NC.",
 };
 

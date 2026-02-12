@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact | Kings Roofing, inc.",
   description:
     "Contact Kings Roofing for a free quote on your roofing project. Serving Asheville, Waynesville, Highlands, and all of Western NC. Call 828-246-2193.",
 };
