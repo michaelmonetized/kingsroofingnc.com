@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors - Kings Roofing */
-  --color-orange-50: #fff7ed;
-  --color-orange-100: #ffedd5;
-  --color-orange-200: #fed7aa;
-  --color-orange-300: #fdba74;
-  --color-orange-400: #fb923c;
-  --color-orange-500: #f97316;
-  --color-orange-600: #ea580c;
-  --color-orange-700: #c2410c;
-  --color-orange-800: #9a3412;
-  --color-orange-900: #7c2d12;
+  /* Kings Roofing Brand Colors - exact from Elementor */
+  --color-primary: #FF7620;
+  --color-secondary: #FFFFFF;
+  --color-text: #1E1E1E;
+  --color-accent: #FF7620;
+  
+  /* Orange shades */
+  --color-orange-500: #FF7620;
+  --color-orange-600: #e56a1c;
+  --color-orange-700: #cc5e18;
 
-  /* Typography - set by next/font in layout.tsx */
-  --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
+  /* Typography */
+  --font-poppins: var(--font-poppins);
+  --font-roboto: var(--font-roboto);
+  --font-roboto-slab: var(--font-roboto-slab);
 }
 
 /* Base styles */
@@ -24,13 +24,30 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: #1f2937;
+  font-family: var(--font-poppins), sans-serif;
+  color: var(--color-text);
   background-color: white;
 }
 
-.font-display {
-  font-family: var(--font-display);
+/* Stylized heading class - matches Elementor text-stroke effect */
+.heading-stylized {
+  font-family: var(--font-roboto-slab), serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--color-primary);
+  text-shadow: 7px 7px 0px #FF7620;
+  color: white;
+}
+
+.heading-stylized-white {
+  font-family: var(--font-roboto-slab), serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 7px 7px 0px #FFFFFF;
+  color: var(--color-primary);
 }
 
 /* Form focus states */

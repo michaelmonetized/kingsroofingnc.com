@@ -1,56 +1,51 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
-import { COMPANY, SERVICE_AREAS, SERVICES } from "@/lib/constants";
+import { COMPANY, SERVICES } from "@/lib/constants";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Roof Image Banner */}
-      <section className="relative h-32 lg:h-48">
-        <Image
-          src="/images/timberline-large-slate.jpeg"
-          alt="Metal roofing"
-          fill
-          className="object-cover"
-          priority
-        />
-      </section>
+      {/* Hero Section - Green roof bg with overlay */}
+      <section className="relative min-h-[600px] lg:min-h-[700px]">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/khc-green-big.jpeg"
+            alt="Green metal roofing"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/75" />
+        </div>
 
-      {/* Hero Content - White bg with orange CTA */}
-      <section className="bg-white py-8 lg:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+        {/* Content */}
+        <div className="relative container mx-auto px-4 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left - Content */}
-            <div>
-              <Image
-                src="/images/KINGS-7-5-1.png"
-                alt="Kings Roofing Lion Logo"
-                width={100}
-                height={100}
-                className="mb-3"
-              />
-              <h2 className="font-display text-orange-500 font-bold text-lg uppercase tracking-wider mb-0">
-                Residential &amp; Commercial
-              </h2>
-              <h1 className="font-display text-3xl lg:text-4xl font-black text-gray-900 uppercase tracking-tight mb-1">
-                Roofing Contractor
+            <div className="text-center lg:text-left">
+              <h1 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized">
+                Residential &amp;<br />Commercial
               </h1>
-              <p className="text-orange-500 font-semibold mb-3">
-                Get Your FREE Quote Today
-              </p>
-              <div className="text-gray-700 space-y-3 text-sm leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#FF7620] mb-2">
+                Roofing Contractor
+              </h2>
+              <h3 className="text-xl text-white mb-6">
+                Get Your <b className="font-black">FREE</b> Quote Today
+              </h3>
+              <div className="text-white/90 space-y-4 text-sm leading-relaxed">
                 <p>
-                  When you choose <Link href="/contact" className="text-orange-500 underline">Kings Roofing</Link> for your next{" "}
-                  <Link href="/residential" className="text-orange-500 underline">residential</Link> or{" "}
-                  <Link href="/commercial" className="text-orange-500 underline">commercial</Link> roofing project, you are choosing excellence and peace of mind. Our expert team is committed to delivering top-notch services with the highest quality materials, ensuring durability and aesthetic appeal for your property. Plus, we offer competitive pricing, giving you the best value in Western North Carolina.
+                  When you choose <Link href="/contact" className="underline opacity-80 hover:opacity-100">Kings Roofing</Link> for your next{" "}
+                  <Link href="/residential" className="underline opacity-80 hover:opacity-100">residential</Link> or{" "}
+                  <Link href="/commercial" className="underline opacity-80 hover:opacity-100">commercial</Link> roofing project, you are choosing excellence and peace of mind. Our expert team is committed to delivering top-notch services with the highest quality materials, ensuring durability and aesthetic appeal for your property. Plus, we offer competitive pricing, giving you the best value in Western North Carolina.
                 </p>
                 <p>
                   We proudly serve Asheville, Candler, Canton,{" "}
-                  <Link href="/residential/cashiers" className="text-orange-500 underline">Cashiers</Link>, Clyde,{" "}
-                  <Link href="/residential/highlands" className="text-orange-500 underline">Highlands</Link>, Lake Junaluska, Maggie Valley, Sylva,{" "}
-                  <Link href="/residential/waynesville" className="text-orange-500 underline">Waynesville</Link>, Weaverville, and surrounding areas.
+                  <Link href="/residential/cashiers" className="underline opacity-80 hover:opacity-100">Cashiers</Link>, Clyde,{" "}
+                  <Link href="/residential/highlands" className="underline opacity-80 hover:opacity-100">Highlands</Link>, Lake Junaluska, Maggie Valley, Sylva,{" "}
+                  <Link href="/residential/waynesville" className="underline opacity-80 hover:opacity-100">Waynesville</Link>, Weaverville, and surrounding areas.
                 </p>
                 <p>
                   Join our satisfied customers and experience the Kings Roofing difference. Contact us today for a free consultation and let us protect your home or business with our reliable and professional roofing solutions.
@@ -59,85 +54,98 @@ export default function Home() {
             </div>
 
             {/* Right - Orange CTA Box */}
-            <div className="bg-orange-500 text-white p-6 lg:p-8">
-              <h3 className="font-display text-2xl lg:text-3xl font-black uppercase text-center mb-1">
-                Get A<br />Free Quote
-              </h3>
-              <p className="text-center text-white/80 text-sm mb-2">- or -</p>
-              <p className="font-display text-2xl font-black uppercase text-center mb-0">Call:</p>
-              <a 
-                href={`tel:${COMPANY.phone}`}
-                className="block font-display text-3xl lg:text-4xl font-black text-center hover:underline"
-              >
-                {COMPANY.phone}
-              </a>
-              <div className="mt-4">
-                <QuoteForm variant="light" />
+            <div className="bg-white border-l-[10px] border-[#FF7620]">
+              <div className="p-6 lg:p-8">
+                <h3 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase text-center leading-tight heading-stylized-white">
+                  Get A<br />Free Quote
+                </h3>
+              </div>
+              <div className="p-4 text-center">
+                <span className="text-gray-600">- or -</span>
+              </div>
+              <div className="bg-[#FF7620] p-6 text-center">
+                <h3 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight heading-stylized">
+                  <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                    Call:<br />{COMPANY.phone}
+                  </a>
+                </h3>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* New Roof Installation */}
-      <section className="relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/timberline-large-slate.jpeg"
-            alt="Roof installation"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative container mx-auto px-4 py-24">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-2">
-              New Roof<br />Installation
-            </h2>
-            <h3 className="text-orange-400 font-bold text-xl mb-4">
-              New Home? Need A Roof? You came to the right place!
-            </h3>
-            <p className="text-white/90 mb-6">
-              We have dozens of commercial projects in the WNC area that boasts our quality work. Whether you need a re-shingle or flat top system, we are here to replace your current system quickly and efficiently.
-            </p>
-            <Link
-              href="/residential"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-bold transition-colors"
-            >
-              Get Started Today
-            </Link>
+      {/* New Roof Installation - Gray with lion bg */}
+      <section 
+        className="relative py-32 lg:py-48"
+        style={{
+          backgroundColor: '#FFFFFF',
+          backgroundImage: 'url(/images/Leaping-Lion-Vector.svg)',
+          backgroundPosition: '-50% 16%',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '1024px auto',
+        }}
+      >
+        <div className="absolute inset-0 bg-white/[0.78]" />
+        <div className="relative container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized">
+                New Roof<br />Installation
+              </h2>
+              <div className="w-36 h-1 bg-[#FF7620] mb-4 mx-auto lg:mx-0" />
+              <h3 className="text-xl text-[#FF7620] font-bold mb-4">
+                New Home? Need A Roof? You came to the right place!
+              </h3>
+              <p className="text-gray-700 mb-6">
+                We have dozens of commercial projects in the WNC area that boasts our quality work. Whether you need a re-shingle or flat top system, we are here to replace your current system quickly and efficiently.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block bg-[#FF7620] hover:bg-[#e56a1c] text-white px-6 py-3 font-bold transition-colors"
+              >
+                Get Started Today
+              </Link>
+            </div>
+            <div className="bg-black aspect-video">
+              {/* Video placeholder - YouTube embed would go here */}
+              <div className="w-full h-full flex items-center justify-center text-white">
+                <span>Video</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Re-Roofing Section - Orange with Lion */}
-      <section className="bg-orange-500 py-16">
+      {/* Re-Roofing Section - Orange with crown bg */}
+      <section className="relative py-20 lg:py-28 bg-[#FF7620]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Lion illustration on left */}
-            <div className="flex justify-center lg:justify-end">
+            <div>
               <Image
-                src="/images/Leaping-Lion-Vector.svg"
-                alt="Kings Roofing Lion"
-                width={300}
-                height={300}
-                className="w-48 lg:w-72 h-auto opacity-90"
+                src="/images/img_0059_0.jpg"
+                alt="Re-roofing services"
+                width={640}
+                height={480}
+                className="w-full h-auto"
               />
             </div>
-            {/* Text on right */}
-            <div className="text-white">
-              <h2 className="font-display text-4xl lg:text-5xl font-black uppercase tracking-tight mb-2">
+            <div className="text-center lg:text-left">
+              <h2 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized-white">
                 Re-Roofing
               </h2>
-              <h3 className="text-white font-bold text-lg mb-1">Old roof?<br />Damaged roof?</h3>
-              <h4 className="text-yellow-300 font-bold mb-4">King&apos;s has you covered.</h4>
-              <p className="text-white/90 text-sm mb-6">
+              <div className="w-36 h-1 bg-white mb-4 mx-auto lg:mx-0" />
+              <h3 className="text-xl text-white font-bold mb-4">
+                Old roof?<br />
+                Damaged roof?<br />
+                King&apos;s has you covered.
+              </h3>
+              <p className="text-white/90 mb-6">
                 Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality roofing contractors can help. Let our Asheville based roofing contractors put years of experience in roofing services to work for you at the most reasonable prices around.
               </p>
               <Link
                 href="/contact"
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-orange-500 px-6 py-2 font-bold transition-colors"
+                className="inline-block bg-white text-[#FF7620] hover:bg-gray-100 px-6 py-3 font-bold border-3 border-white transition-colors"
               >
                 Get Started Today
               </Link>
@@ -147,74 +155,72 @@ export default function Home() {
       </section>
 
       {/* Roof Repair Section */}
-      <section className="bg-white py-16">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="font-display text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-2">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <h2 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized">
                 Roof Repair
               </h2>
-              <h3 className="text-orange-500 font-bold text-xl mb-4">
-                Leaky roof? We can help!
+              <div className="w-36 h-1 bg-[#FF7620] mb-4 mx-auto lg:mx-0" />
+              <h3 className="text-xl text-[#FF7620] font-bold mb-4">
+                Leaky roof?<br />We can help!
               </h3>
               <p className="text-gray-600 mb-4">
                 Our roofing contractors handle all types of roof repairs including:
               </p>
-              <ul className="grid grid-cols-2 gap-2 text-sm text-gray-700 mb-6">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700 mb-6">
                 {SERVICES.repairs.map((service) => (
                   <li key={service} className="flex items-start gap-2">
-                    <span className="text-orange-500">•</span>
+                    <span className="text-[#FF7620]">•</span>
                     {service}
                   </li>
                 ))}
               </ul>
-              <p className="text-gray-600 text-sm mb-6">
-                Kings Roofing is your #1 roofing company in Asheville. Specializing in new GAF Timberline HD shingle roofing and Best Buy Metal roofing. KHC is deploying roofers in Asheville, everyday, so call now or fill out our form here for a free estimate.
-              </p>
               <Link
                 href="/contact"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-bold transition-colors"
+                className="inline-block bg-[#FF7620] hover:bg-[#e56a1c] text-white px-6 py-3 font-bold transition-colors"
               >
                 Get Started Today
               </Link>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-lg overflow-hidden">
+            <div className="order-1 lg:order-2">
               <Image
                 src="/images/roof-repair-1024x683.jpeg"
                 alt="Roof repair services"
-                fill
-                className="object-cover"
+                width={1024}
+                height={683}
+                className="w-full h-auto"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Location Cards */}
-      <section className="bg-gray-900 py-16">
+      {/* Location Cards - Flip boxes */}
+      <section className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: "Asheville", slug: "asheville" },
-              { name: "Cashiers", slug: "cashiers" },
-              { name: "Highlands", slug: "highlands" },
-              { name: "Waynesville", slug: "waynesville" },
+              { name: "Asheville", slug: "asheville", image: "/images/asheville-roofing-contractors.jpeg" },
+              { name: "Cashiers", slug: "cashiers", image: "/images/cashiers-roofing-contractors.jpeg" },
+              { name: "Highlands", slug: "highlands", image: "/images/highlands-roofing-contractors.jpeg" },
+              { name: "Waynesville", slug: "waynesville", image: "/images/waynesville-roofing-contractors.jpeg" },
             ].map((location) => (
               <Link
                 key={location.slug}
                 href={`/residential/${location.slug}`}
-                className="group relative h-48 lg:h-64 rounded-lg overflow-hidden"
+                className="group relative h-64 lg:h-96 overflow-hidden"
               >
                 <Image
-                  src="/images/timberline-large-slate.jpeg"
+                  src={location.image}
                   alt={`${location.name} Roofing Contractor`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="font-display font-bold text-xl uppercase">{location.name}</h3>
-                  <p className="text-sm text-white/80">Roofing Contractor</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white text-center">
+                  <h3 className="font-bold text-lg">{location.name} Roofing Contractor</h3>
                 </div>
               </Link>
             ))}
@@ -223,22 +229,22 @@ export default function Home() {
       </section>
 
       {/* Roofers in Asheville - Orange */}
-      <section className="bg-orange-500 py-16">
+      <section className="py-20 lg:py-28 bg-[#FF7620]">
         <div className="container mx-auto px-4 text-center">
           <Image
             src="/images/KINGS-7-5-1.png"
             alt="Kings Roofing Lion Logo"
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             className="mx-auto mb-6"
           />
-          <h2 className="font-display text-3xl lg:text-4xl font-black text-white uppercase tracking-tight mb-2">
+          <h2 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized-white">
             Roofers in Asheville NC
           </h2>
-          <p className="text-yellow-300 font-semibold text-lg mb-6">
-            serving residential and commercial clients across Western North Carolina
+          <p className="text-2xl lg:text-3xl text-white font-semibold mb-8">
+            serving residential and commercial clients across<br />Western North Carolina
           </p>
-          <div className="max-w-3xl mx-auto text-white/90 space-y-4 text-sm">
+          <div className="max-w-4xl mx-auto text-white/90 space-y-4 text-sm">
             <p>
               Kings Roofing serves Asheville, Highlands, Waynesville, Sylva, Bryson City, Cashiers, and Canton. For over a decade, we have been a leading Western North Carolina roofing and framing contractor. When you&apos;re looking for a Waynesville, Asheville, Canton or Highlands Roofer, remember King&apos;s Haywood Construction.
             </p>

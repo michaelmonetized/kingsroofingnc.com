@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Poppins, Roboto, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { COMPANY } from "@/lib/constants";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-poppins",
 });
 
-const oswald = Oswald({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-roboto",
+});
+
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-roboto-slab",
 });
 
 export const metadata: Metadata = {
@@ -53,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable} antialiased`}>
+      <body className={`${poppins.variable} ${roboto.variable} ${robotoSlab.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
