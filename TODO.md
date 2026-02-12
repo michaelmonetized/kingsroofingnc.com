@@ -39,10 +39,17 @@
 - [x] Success/error states
 
 ## Deployment
-- [ ] Create GitHub repo
-- [ ] Deploy to Vercel
-- [ ] Configure RESEND_API_KEY in Vercel
-- [ ] gt create + gt submit
+- [x] Create GitHub repo: https://github.com/michaelmonetized/kingsroofingnc.com
+- [x] Deploy to Vercel: https://kingsroofingnccom.vercel.app
+- [ ] Configure RESEND_API_KEY in Vercel (Settings > Environment Variables)
+- [ ] Add custom domain kingsroofingnc.com in Vercel
+- [ ] DNS: Point kingsroofingnc.com to Vercel (A record or CNAME)
+
+## Post-Launch
+- [ ] Test contact form with real RESEND_API_KEY
+- [ ] OpenGraph images for social sharing
+- [ ] Google Search Console submission
+- [ ] Google Business Profile link to new site
 
 ## Business Info
 - Company: Kings Roofing, Inc. / King's Haywood Construction
