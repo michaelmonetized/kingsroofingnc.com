@@ -50,7 +50,7 @@ export function Footer() {
               <p className="text-gray-400 mt-4 text-xs">
                 Someone is available Monday through Saturday to answer all of your questions.
               </p>
-              <a href="https://facebook.com" target="_blank" rel="noopener" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
                 Visit Us on Facebook
               </a>
             </div>
@@ -99,7 +99,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-400">
           <p>Copyright © 2026 <Link href="/" className="text-orange-500 hover:underline">Kings Roofing</Link>. All rights Reserved.</p>
           <p className="mt-1">
-            <Link href="/sitemap" className="hover:text-orange-400">Sitemap</Link> | <a href="https://hustlelaunch.com" target="_blank" rel="noopener" className="text-green-500 hover:underline">Web Design</a> + <a href="https://hustlelaunch.com" target="_blank" rel="noopener" className="text-red-500 hover:underline">Marketing</a> by Hustle Launch.
+            <Link href="/sitemap" className="hover:text-orange-400">Sitemap</Link> | <a href="https://hustlelaunch.com" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">Web Design</a> + <a href="https://hustlelaunch.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Marketing</a> by Hustle Launch.
           </p>
         </div>
       </div>
