@@ -52,14 +52,11 @@ export default async function LocationPage({ params }: PageProps) {
               {locationData.body}
             </p>
             <p className="text-lg text-gray-300 mb-8">
-              {locationData.cta.split("828-279-6896").map((part, i, arr) => (
-                <span key={i}>
-                  {part}
-                  {i < arr.length - 1 && (
-                    <a href="tel:828-279-6896" className="text-orange-400 hover:underline">828-279-6896</a>
-                  )}
-                </span>
-              ))}
+              For a Free Estimate, Call us at{" "}
+              <a href={`tel:${COMPANY.phoneAlt}`} className="text-orange-400 hover:underline">
+                {COMPANY.phoneAlt}
+              </a>{" "}
+              or fill out the form here.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -186,10 +183,10 @@ export default async function LocationPage({ params }: PageProps) {
           <h2 className="text-3xl font-bold text-white mb-6">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
             </p>
             <p className="text-xl text-white">
-              <a href="mailto:kingshaywood@gmail.com" className="hover:underline">kingshaywood@gmail.com</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
             </p>
           </div>
           <Link

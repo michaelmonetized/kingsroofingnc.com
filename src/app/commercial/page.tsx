@@ -118,7 +118,7 @@ export default function CommercialPage() {
           </h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
             </p>
             <p className="text-xl text-white">
               <a href="mailto:kingshaywood@gmail.com" className="hover:underline">kingshaywood@gmail.com</a>
