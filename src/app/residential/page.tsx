@@ -28,7 +28,7 @@ export default function ResidentialPage() {
               New construction and re-roofing are our areas of expertise. Let our roofing 
               contractors put years of experience to work for you at the most reasonable 
               prices around. For a Free Estimate, Call us at{" "}
-              <a href="tel:828-279-6896" className="text-orange-400 hover:underline">828-279-6896</a>{" "}
+              <a href={`tel:${COMPANY.phoneAlt}`} className="text-orange-400 hover:underline">{COMPANY.phoneAlt</a>{" "}
               or fill out the webform!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -157,7 +157,7 @@ export default function ResidentialPage() {
           </h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone</a>
             </p>
             <p className="text-xl text-white">
               <a href="mailto:kingshaywood@gmail.com" className="hover:underline">kingshaywood@gmail.com</a>

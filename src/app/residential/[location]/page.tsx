@@ -12,7 +12,7 @@ const LOCATIONS = {
     headline: "Asheville Roofing Contractor",
     intro: "Our roofing contractors are located in the beautiful town of Asheville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Asheville team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
-    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
+    cta: "For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.",
   },
   waynesville: {
     name: "Waynesville",
@@ -21,7 +21,7 @@ const LOCATIONS = {
     headline: "Waynesville Roofing Contractors",
     intro: "Waynesville, NC is our home base. We have been replacing roofs in Haywood County for over a decade. Our roofing contractors are located in the beautiful town of Waynesville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Waynesville roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
-    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
+    cta: "For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.",
   },
   highlands: {
     name: "Highlands",
@@ -30,7 +30,7 @@ const LOCATIONS = {
     headline: "Highlands Roofing Contractor",
     intro: "Highlands is one of the most beautiful areas of Western North Carolina, which is why we love serving the beautiful people that live here. Our Highlands Roofing Contractors are among the most qualified around.",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Highlands team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
-    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
+    cta: "For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.",
   },
   cashiers: {
     name: "Cashiers",
@@ -39,7 +39,7 @@ const LOCATIONS = {
     headline: "Cashiers Roofing Contractors",
     intro: "Cashiers is one of our favorite towns in WNC, and we try to serve her wonderful residents as often as possible. Allow the locally owned Kings Roofing a the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Highlands roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
-    cta: "For a Free Estimate, Call us at 828-279-6896 or fill out the form here.",
+    cta: "For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.",
   },
 };
 
@@ -93,11 +93,11 @@ export default async function LocationPage({ params }: PageProps) {
               {locationData.body}
             </p>
             <p className="text-lg text-gray-300 mb-8">
-              {locationData.cta.split("828-279-6896").map((part, i, arr) => (
+              {locationData.cta.split("${COMPANY.phoneAlt}").map((part, i, arr) => (
                 <span key={i}>
                   {part}
                   {i < arr.length - 1 && (
-                    <a href="tel:828-279-6896" className="text-orange-400 hover:underline">828-279-6896</a>
+                    <a href="tel:${COMPANY.phoneAlt}" className="text-orange-400 hover:underline">${COMPANY.phoneAlt}</a>
                   )}
                 </span>
               ))}
@@ -227,7 +227,7 @@ export default async function LocationPage({ params }: PageProps) {
           <h2 className="text-3xl font-bold text-white mb-6">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href="tel:828-246-2193" className="hover:underline">828-246-2193</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone</a>
             </p>
             <p className="text-xl text-white">
               <a href="mailto:kingshaywood@gmail.com" className="hover:underline">kingshaywood@gmail.com</a>
