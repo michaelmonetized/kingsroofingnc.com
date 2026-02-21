@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { COMPANY, NAVIGATION } from "@/lib/constants";
+import { PiListLight, PiXLight, PiCaretDownLight } from "react-icons/pi";
 
 type NavItem = {
   label: string;
@@ -53,7 +54,7 @@ export function Header() {
                   <>
                     <button className="flex items-center gap-1 text-gray-700 hover:text-orange-500 font-medium transition-colors px-3 py-2">
                       {item.label}
-                      <ChevronDownIcon className="w-4 h-4" />
+                      <PiCaretDownLight className="w-4 h-4" />
                     </button>
                     {openDropdown === item.label && (
                       <div className="absolute top-full left-0 mt-0 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
@@ -95,9 +96,9 @@ export function Header() {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <CloseIcon className="w-6 h-6" />
+              <PiXLight className="w-6 h-6" />
             ) : (
-              <MenuIcon className="w-6 h-6" />
+              <PiListLight className="w-6 h-6" />
             )}
           </button>
         </nav>
@@ -115,7 +116,7 @@ export function Header() {
                         className="w-full flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-orange-50 rounded-lg font-medium"
                       >
                         {item.label}
-                        <ChevronDownIcon className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`} />
+                        <PiCaretDownLight className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`} />
                       </button>
                       {mobileExpanded === item.label && (
                         <div className="ml-4 border-l-2 border-orange-200 pl-4 mt-1 space-y-1">
@@ -159,26 +160,5 @@ export function Header() {
   );
 }
 
-function MenuIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  );
-}
 
-function CloseIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
-}
 
-function ChevronDownIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}

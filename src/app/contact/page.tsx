@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PiPhoneLight, PiEnvelopeLight } from "react-icons/pi";
 import { Layout } from "@/components/layout";
 import { ContactForm } from "@/components/ContactForm";
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
@@ -39,19 +40,19 @@ export default function ContactPage() {
                   
                   <div className="space-y-4">
                     <ContactInfo
-                      icon={<PhoneIcon className="w-5 h-5" />}
+                      icon={<PiPhoneLight className="w-5 h-5" />}
                       label="Phone"
                       value={COMPANY.phone}
                       href={`tel:${COMPANY.phone}`}
                     />
                     <ContactInfo
-                      icon={<PhoneIcon className="w-5 h-5" />}
+                      icon={<PiPhoneLight className="w-5 h-5" />}
                       label="Alternate"
                       value={COMPANY.phoneAlt}
                       href={`tel:${COMPANY.phoneAlt}`}
                     />
                     <ContactInfo
-                      icon={<EmailIcon className="w-5 h-5" />}
+                      icon={<PiEnvelopeLight className="w-5 h-5" />}
                       label="Email"
                       value={COMPANY.email}
                       href={`mailto:${COMPANY.email}`}
@@ -85,7 +86,7 @@ export default function ContactPage() {
                     href={`tel:${COMPANY.phone}`}
                     className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-4 py-2 rounded-lg font-semibold text-sm"
                   >
-                    <PhoneIcon className="w-4 h-4" />
+                    <PiPhoneLight className="w-4 h-4" />
                     Call Now
                   </a>
                 </div>
@@ -137,18 +138,4 @@ function ContactInfo({
   );
 }
 
-function PhoneIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-    </svg>
-  );
-}
 
-function EmailIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-  );
-}
