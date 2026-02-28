@@ -16,9 +16,9 @@ const USE_CASES = [
 ];
 
 const SPECS = [
-  "Available in 12', 18', 20', 22', 24', and 26' widths",
-  "Standard lengths from 21' to 51' (custom available)",
-  "7', 8', 9', and 10' leg heights",
+  "Available in 12&apos;, 18&apos;, 20&apos;, 22&apos;, 24&apos;, and 26&apos; widths",
+  "Standard lengths from 21&apos; to 51&apos; (custom available)",
+  "7&apos;, 8&apos;, 9&apos;, and 10&apos; leg heights",
   "29-gauge steel roofing panels — 40-year rust-through warranty",
   "Choice of 18 standard colors",
   "A-frame horizontal roof panels",
@@ -83,10 +83,10 @@ export default function RegularStyleCarportsPage() {
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Kings Roofing?</h2>
           <p className="text-gray-600 text-lg mb-4">
-            We've been installing metal carports across Western North Carolina for over a decade. Every structure is professionally installed by our local crew — no sub-contractors, no surprises.
+            We&apos;ve been installing metal carports across Western North Carolina for over a decade. Every structure is professionally installed by our local crew — no sub-contractors, no surprises.
           </p>
           <p className="text-gray-600 text-lg">
-            All our metal carports are backed by manufacturer warranties and installed to meet North Carolina's wind and snow load codes. Call us for a free, no-pressure quote.
+            All our metal carports are backed by manufacturer warranties and installed to meet North Carolina&apos;s wind and snow load codes. Call us for a free, no-pressure quote.
           </p>
         </div>
       </section>

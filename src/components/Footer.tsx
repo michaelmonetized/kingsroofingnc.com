@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
-import { PiPhoneLight, PiEnvelopeLight } from "react-icons/pi";
+import { PiPhoneLight } from "react-icons/pi";
 
 export function Footer() {
   return (

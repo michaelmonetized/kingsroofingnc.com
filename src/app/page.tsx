@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
 import { COMPANY, SERVICES } from "@/lib/constants";
-import { QuoteForm } from "@/components/QuoteForm";
 
 export default function Home() {
   return (
