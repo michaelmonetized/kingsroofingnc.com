@@ -28,12 +28,12 @@ const USE_CASES = [
 ];
 
 const SPECS = [
-  "Available in 12' through 40'+ widths (custom spans available)",
+  "Available in 12&apos; through 40&apos;+ widths (custom spans available)",
   "Vertical 29-gauge panels from ridge to eave \u2014 no horizontal seams",
   "Hat-channel framing adds rigidity and reduces panel oil-canning",
   "40-year rust-through warranty on panels",
   "Highest wind and snow load ratings of any carport style",
-  "7' to 16' leg heights available"
+  "7&apos; to 16&apos; leg heights available"
 ];
 
 export default function Page() {
@@ -45,7 +45,7 @@ export default function Page() {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Vertical Roof Style Metal Carport</h1>
             <p className="text-xl text-gray-300 mb-8">
-              The vertical roof is the premium option — roofing panels run ridge to eave so water, snow, and debris shed immediately. The most structurally sound carport style and the best choice for WNC's weather.
+              The vertical roof is the premium option — roofing panels run ridge to eave so water, snow, and debris shed immediately. The most structurally sound carport style and the best choice for WNC&apos;s weather.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold">

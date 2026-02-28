@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "echo \"TODO: Add Jest testing framework\" && exit 0",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "16.1.6",
