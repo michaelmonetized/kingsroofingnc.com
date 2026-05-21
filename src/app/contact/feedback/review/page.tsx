@@ -3,7 +3,8 @@ import { Layout } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Review | Kings Roofing, inc.",
-  description: "Leave a review for Kings Roofing on Google, Yelp, or Angi. We appreciate your feedback!",
+  description:
+    "Leave a review for Kings Roofing on Google, Yelp, or Angi. We appreciate your feedback!",
 };
 
 const REVIEW_PLATFORMS = [

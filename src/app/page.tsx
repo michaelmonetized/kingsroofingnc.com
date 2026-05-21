@@ -26,7 +26,9 @@ export default function Home() {
             {/* Left - Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized">
-                Residential &amp;<br />Commercial
+                Residential &amp;
+                <br />
+                Commercial
               </h1>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#FF7620] mb-2">
                 Roofing Contractor
@@ -36,18 +38,51 @@ export default function Home() {
               </h3>
               <div className="text-white/90 space-y-4 text-sm leading-relaxed">
                 <p>
-                  When you choose <Link href="/contact" className="underline opacity-80 hover:opacity-100">Kings Roofing</Link> for your next{" "}
-                  <Link href="/residential" className="underline opacity-80 hover:opacity-100">residential</Link> or{" "}
-                  <Link href="/commercial" className="underline opacity-80 hover:opacity-100">commercial</Link> roofing project, you are choosing excellence and peace of mind. Our expert team is committed to delivering top-notch services with the highest quality materials, ensuring durability and aesthetic appeal for your property. Plus, we offer competitive pricing, giving you the best value in Western North Carolina.
+                  When you choose{" "}
+                  <Link href="/contact" className="underline opacity-80 hover:opacity-100">
+                    Kings Roofing
+                  </Link>{" "}
+                  for your next{" "}
+                  <Link href="/residential" className="underline opacity-80 hover:opacity-100">
+                    residential
+                  </Link>{" "}
+                  or{" "}
+                  <Link href="/commercial" className="underline opacity-80 hover:opacity-100">
+                    commercial
+                  </Link>{" "}
+                  roofing project, you are choosing excellence and peace of mind. Our expert team is
+                  committed to delivering top-notch services with the highest quality materials,
+                  ensuring durability and aesthetic appeal for your property. Plus, we offer
+                  competitive pricing, giving you the best value in Western North Carolina.
                 </p>
                 <p>
                   We proudly serve Asheville, Candler, Canton,{" "}
-                  <Link href="/residential/cashiers" className="underline opacity-80 hover:opacity-100">Cashiers</Link>, Clyde,{" "}
-                  <Link href="/residential/highlands" className="underline opacity-80 hover:opacity-100">Highlands</Link>, Lake Junaluska, Maggie Valley, Sylva,{" "}
-                  <Link href="/residential/waynesville" className="underline opacity-80 hover:opacity-100">Waynesville</Link>, Weaverville, and surrounding areas.
+                  <Link
+                    href="/residential/cashiers"
+                    className="underline opacity-80 hover:opacity-100"
+                  >
+                    Cashiers
+                  </Link>
+                  , Clyde,{" "}
+                  <Link
+                    href="/residential/highlands"
+                    className="underline opacity-80 hover:opacity-100"
+                  >
+                    Highlands
+                  </Link>
+                  , Lake Junaluska, Maggie Valley, Sylva,{" "}
+                  <Link
+                    href="/residential/waynesville"
+                    className="underline opacity-80 hover:opacity-100"
+                  >
+                    Waynesville
+                  </Link>
+                  , Weaverville, and surrounding areas.
                 </p>
                 <p>
-                  Join our satisfied customers and experience the Kings Roofing difference. Contact us today for a free consultation and let us protect your home or business with our reliable and professional roofing solutions.
+                  Join our satisfied customers and experience the Kings Roofing difference. Contact
+                  us today for a free consultation and let us protect your home or business with our
+                  reliable and professional roofing solutions.
                 </p>
               </div>
             </div>
@@ -56,7 +91,8 @@ export default function Home() {
             <div className="bg-white border-l-[10px] border-[#FF7620]">
               <div className="p-6 lg:p-8">
                 <h3 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase text-center leading-tight heading-stylized-white">
-                  Get A<br />Free Quote
+                  Get A<br />
+                  Free Quote
                 </h3>
               </div>
               <div className="p-4 text-center">
@@ -65,7 +101,9 @@ export default function Home() {
               <div className="bg-[#FF7620] p-6 text-center">
                 <h3 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight heading-stylized">
                   <a href={`tel:${COMPANY.phone}`} className="hover:underline">
-                    Call:<br />{COMPANY.phone}
+                    Call:
+                    <br />
+                    {COMPANY.phone}
                   </a>
                 </h3>
               </div>
@@ -75,14 +113,14 @@ export default function Home() {
       </section>
 
       {/* New Roof Installation - Gray with lion bg */}
-      <section 
+      <section
         className="relative py-32 lg:py-48"
         style={{
-          backgroundColor: '#FFFFFF',
-          backgroundImage: 'url(/images/Leaping-Lion-Vector.svg)',
-          backgroundPosition: '-50% 16%',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '1024px auto',
+          backgroundColor: "#FFFFFF",
+          backgroundImage: "url(/images/Leaping-Lion-Vector.svg)",
+          backgroundPosition: "-50% 16%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "1024px auto",
         }}
       >
         <div className="absolute inset-0 bg-white/[0.78]" />
@@ -90,14 +128,18 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-[2.5rem] lg:text-[3.9rem] font-black uppercase leading-tight mb-2 heading-stylized">
-                New Roof<br />Installation
+                New Roof
+                <br />
+                Installation
               </h2>
               <div className="w-36 h-1 bg-[#FF7620] mb-4 mx-auto lg:mx-0" />
               <h3 className="text-xl text-[#FF7620] font-bold mb-4">
                 New Home? Need A Roof? You came to the right place!
               </h3>
               <p className="text-gray-700 mb-6">
-                We have dozens of commercial projects in the WNC area that boasts our quality work. Whether you need a re-shingle or flat top system, we are here to replace your current system quickly and efficiently.
+                We have dozens of commercial projects in the WNC area that boasts our quality work.
+                Whether you need a re-shingle or flat top system, we are here to replace your
+                current system quickly and efficiently.
               </p>
               <Link
                 href="/contact"
@@ -140,12 +182,17 @@ export default function Home() {
               </h2>
               <div className="w-36 h-1 bg-white mb-4 mx-auto lg:mx-0" />
               <h3 className="text-xl text-white font-bold mb-4">
-                Old roof?<br />
-                Damaged roof?<br />
+                Old roof?
+                <br />
+                Damaged roof?
+                <br />
                 King&apos;s has you covered.
               </h3>
               <p className="text-white/90 mb-6">
-                Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality roofing contractors can help. Let our Asheville based roofing contractors put years of experience in roofing services to work for you at the most reasonable prices around.
+                Whether your roof just needs a minor repair or needs to be replaced altogether, our
+                team of quality roofing contractors can help. Let our Asheville based roofing
+                contractors put years of experience in roofing services to work for you at the most
+                reasonable prices around.
               </p>
               <Link
                 href="/contact"
@@ -168,7 +215,9 @@ export default function Home() {
               </h2>
               <div className="w-36 h-1 bg-[#FF7620] mb-4 mx-auto lg:mx-0" />
               <h3 className="text-xl text-[#FF7620] font-bold mb-4">
-                Leaky roof?<br />We can help!
+                Leaky roof?
+                <br />
+                We can help!
               </h3>
               <p className="text-gray-600 mb-4">
                 Our roofing contractors handle all types of roof repairs including:
@@ -206,10 +255,26 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: "Asheville", slug: "asheville", image: "/images/asheville-roofing-contractors.jpeg" },
-              { name: "Cashiers", slug: "cashiers", image: "/images/cashiers-roofing-contractors.jpeg" },
-              { name: "Highlands", slug: "highlands", image: "/images/highlands-roofing-contractors.jpeg" },
-              { name: "Waynesville", slug: "waynesville", image: "/images/waynesville-roofing-contractors.jpeg" },
+              {
+                name: "Asheville",
+                slug: "asheville",
+                image: "/images/asheville-roofing-contractors.jpeg",
+              },
+              {
+                name: "Cashiers",
+                slug: "cashiers",
+                image: "/images/cashiers-roofing-contractors.jpeg",
+              },
+              {
+                name: "Highlands",
+                slug: "highlands",
+                image: "/images/highlands-roofing-contractors.jpeg",
+              },
+              {
+                name: "Waynesville",
+                slug: "waynesville",
+                image: "/images/waynesville-roofing-contractors.jpeg",
+              },
             ].map((location) => (
               <Link
                 key={location.slug}
@@ -246,20 +311,31 @@ export default function Home() {
             Roofers in Asheville NC
           </h2>
           <p className="text-2xl lg:text-3xl text-white font-semibold mb-8">
-            serving residential and commercial clients across<br />Western North Carolina
+            serving residential and commercial clients across
+            <br />
+            Western North Carolina
           </p>
           <div className="max-w-4xl mx-auto text-white/90 space-y-4 text-sm">
             <p>
-              Kings Roofing serves Asheville, Highlands, Waynesville, Sylva, Bryson City, Cashiers, and Canton. For over a decade, we have been a leading Western North Carolina roofing and framing contractor. When you&apos;re looking for a Waynesville, Asheville, Canton or Highlands Roofer, remember King&apos;s Haywood Construction.
+              Kings Roofing serves Asheville, Highlands, Waynesville, Sylva, Bryson City, Cashiers,
+              and Canton. For over a decade, we have been a leading Western North Carolina roofing
+              and framing contractor. When you&apos;re looking for a Waynesville, Asheville, Canton
+              or Highlands Roofer, remember King&apos;s Haywood Construction.
             </p>
             <p>
               We are an Asheville Roofing Contracting Company offering quality and affordability.
             </p>
             <p>
-              We are reliable, trustworthy, affordable, and have dozens and dozens of referrals to prove it. Most homeowners won&apos;t refer their Waynesville, Asheville, or Highlands roofing contractor, but we at Kings Roofing get most of our work from referrals and that statement speaks for itself. We at King&apos;s Haywood Construction offer the highest quality and professionalism that you can&apos;t find anywhere else.
+              We are reliable, trustworthy, affordable, and have dozens and dozens of referrals to
+              prove it. Most homeowners won&apos;t refer their Waynesville, Asheville, or Highlands
+              roofing contractor, but we at Kings Roofing get most of our work from referrals and
+              that statement speaks for itself. We at King&apos;s Haywood Construction offer the
+              highest quality and professionalism that you can&apos;t find anywhere else.
             </p>
             <p>
-              Whether you need roofing installation, roofing repair, or any other roofing service, our whole roof contracting team is energetic, easy-going, and ready to get the roofing job done right the first time.
+              Whether you need roofing installation, roofing repair, or any other roofing service,
+              our whole roof contracting team is energetic, easy-going, and ready to get the roofing
+              job done right the first time.
             </p>
           </div>
         </div>

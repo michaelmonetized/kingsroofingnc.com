@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto, Roboto_Slab, Inter } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/components/posthog-provider";
 import { Providers } from "@/components/providers";
 import { COMPANY } from "@/lib/constants";
 
@@ -67,8 +68,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} ${robotoSlab.variable} ${inter.variable} antialiased`}>
-        <Providers>{children}</Providers>
+      <body
+        className={`${poppins.variable} ${roboto.variable} ${robotoSlab.variable} ${inter.variable} antialiased`}
+      >
+        <PostHogProvider>
+          <Providers>{children}</Providers>
+        </PostHogProvider>
       </body>
     </html>
   );

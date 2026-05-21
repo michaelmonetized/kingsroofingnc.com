@@ -42,15 +42,9 @@ export default async function LocationPage({ params }: PageProps) {
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {locationData.headline}
-            </h1>
-            <p className="text-xl text-gray-300 mb-6">
-              {locationData.intro}
-            </p>
-            <p className="text-xl text-gray-300 mb-6">
-              {locationData.body}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{locationData.headline}</h1>
+            <p className="text-xl text-gray-300 mb-6">{locationData.intro}</p>
+            <p className="text-xl text-gray-300 mb-6">{locationData.body}</p>
             <p className="text-lg text-gray-300 mb-8">
               For a Free Estimate, Call us at{" "}
               <a href={`tel:${COMPANY.phoneAlt}`} className="text-orange-400 hover:underline">
@@ -79,17 +73,19 @@ export default async function LocationPage({ params }: PageProps) {
       {/* Roof Replacement */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            Roof Replacement
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Roof Replacement</h2>
           <ul className="space-y-4 max-w-3xl">
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-700 text-lg">CertainTeed &amp; GAF full-color shingle</span>
+              <span className="text-gray-700 text-lg">
+                CertainTeed &amp; GAF full-color shingle
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-700 text-lg">New roof construction &amp; installation.</span>
+              <span className="text-gray-700 text-lg">
+                New roof construction &amp; installation.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
@@ -97,15 +93,22 @@ export default async function LocationPage({ params }: PageProps) {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-700 text-lg">All types of shingles; 3-tab, asphalt, fiberglass, architectural, premium designer, steel, metal, composite, shakes, and genuine slate.</span>
+              <span className="text-gray-700 text-lg">
+                All types of shingles; 3-tab, asphalt, fiberglass, architectural, premium designer,
+                steel, metal, composite, shakes, and genuine slate.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-700 text-lg">Manufacturers warranties from 20 years to lifetime.</span>
+              <span className="text-gray-700 text-lg">
+                Manufacturers warranties from 20 years to lifetime.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-700 text-lg">Learn about EnergyStar tax credits up to $1500 for roofing material.</span>
+              <span className="text-gray-700 text-lg">
+                Learn about EnergyStar tax credits up to $1500 for roofing material.
+              </span>
             </li>
           </ul>
         </div>
@@ -127,10 +130,7 @@ export default async function LocationPage({ params }: PageProps) {
               "Metal Roofing",
               "Rubber Roofing",
             ].map((material) => (
-              <div
-                key={material}
-                className="bg-gray-100 p-4 rounded-lg text-center"
-              >
+              <div key={material} className="bg-gray-100 p-4 rounded-lg text-center">
                 <span className="font-medium text-gray-900">{material}</span>
               </div>
             ))}
@@ -141,9 +141,7 @@ export default async function LocationPage({ params }: PageProps) {
       {/* Roof Repair */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Roof Repair
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Roof Repair</h2>
           <ul className="space-y-4 max-w-3xl">
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
@@ -151,11 +149,15 @@ export default async function LocationPage({ params }: PageProps) {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-300 text-lg">We handle all types of roof repairs including emergency repairs.</span>
+              <span className="text-gray-300 text-lg">
+                We handle all types of roof repairs including emergency repairs.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-300 text-lg">Roof, chimney, and skylight leaks. Wind, hail, or tree limb damage. Flashing repair.</span>
+              <span className="text-gray-300 text-lg">
+                Roof, chimney, and skylight leaks. Wind, hail, or tree limb damage. Flashing repair.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
@@ -163,7 +165,9 @@ export default async function LocationPage({ params }: PageProps) {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-300 text-lg">Roof drains/pipe boot replacement. Ice dams/water backup.</span>
+              <span className="text-gray-300 text-lg">
+                Roof drains/pipe boot replacement. Ice dams/water backup.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
@@ -171,7 +175,9 @@ export default async function LocationPage({ params }: PageProps) {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-orange-500 font-bold mt-1">•</span>
-              <span className="text-gray-300 text-lg">Preventative maintenance. Gutters/siding.</span>
+              <span className="text-gray-300 text-lg">
+                Preventative maintenance. Gutters/siding.
+              </span>
             </li>
           </ul>
         </div>
@@ -183,10 +189,14 @@ export default async function LocationPage({ params }: PageProps) {
           <h2 className="text-3xl font-bold text-white mb-6">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                {COMPANY.phone}
+              </a>
             </p>
             <p className="text-xl text-white">
-              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">
+                {COMPANY.email}
+              </a>
             </p>
           </div>
           <Link

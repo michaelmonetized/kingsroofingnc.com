@@ -54,13 +54,7 @@ export function QuoteForm({ variant = "dark" }: QuoteFormProps) {
 
   return (
     <form action={handleSubmit} className="space-y-3">
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name *"
-        required
-        className={inputClass}
-      />
+      <input type="text" name="name" placeholder="Your Name *" required className={inputClass} />
       <input
         type="email"
         name="email"
@@ -68,13 +62,7 @@ export function QuoteForm({ variant = "dark" }: QuoteFormProps) {
         required
         className={inputClass}
       />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number *"
-        required
-        className={inputClass}
-      />
+      <input type="tel" name="phone" placeholder="Phone Number *" required className={inputClass} />
       <textarea
         name="message"
         placeholder="Tell us about your project *"
@@ -91,9 +79,7 @@ export function QuoteForm({ variant = "dark" }: QuoteFormProps) {
         ))}
         <option value="Other">Other</option>
       </select>
-      {error && (
-        <p className="text-red-200 text-sm">{error}</p>
-      )}
+      {error && <p className="text-red-200 text-sm">{error}</p>}
       <button type="submit" disabled={pending} className={buttonClass}>
         {pending ? "Sending..." : "Get Free Quote"}
       </button>

@@ -5,20 +5,36 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Go Metal Roofing Supplier Asheville, NC + Canton, NC Color Picker | Kings Roofing, inc.",
-  description: "Metal roofing colors and panel specifications. Tuff-Rib, R-Panel, 5V-Crimp, and Corrugated panels. Kings Roofing in Western NC.",
+  description:
+    "Metal roofing colors and panel specifications. Tuff-Rib, R-Panel, 5V-Crimp, and Corrugated panels. Kings Roofing in Western NC.",
 };
 
 const METAL_COLORS = [
-  "Barn Red", "Black", "Bright Red", "Bronze", "Brown", "Burgundy",
-  "Charcoal", "Clay", "Copper Penny", "Gallery Blue", "Galvalume",
-  "Gray", "Hawaiian Blue", "Hunter Green", "Pure White", "Sierra Tan",
-  "Stone", "White",
+  "Barn Red",
+  "Black",
+  "Bright Red",
+  "Bronze",
+  "Brown",
+  "Burgundy",
+  "Charcoal",
+  "Clay",
+  "Copper Penny",
+  "Gallery Blue",
+  "Galvalume",
+  "Gray",
+  "Hawaiian Blue",
+  "Hunter Green",
+  "Pure White",
+  "Sierra Tan",
+  "Stone",
+  "White",
 ];
 
 const PANEL_TYPES = [
   {
     name: "Tuff-Rib / Class Rib Metal Roofing Panel",
-    description: "This is one of our most popular panel brands, and it's due to it being a great choice for both Residential and Commercial, and it is very economical. It's a highly lasting and durable metal roofing panel from start to finish. The manufacturer starts with a high tensile steel, and then coats it with Galvalume zinc-aluminum coating, and then primes it, and adds a layer of baked-on enamel.\n\nIt includes a watertight design that features a built-in water siphon channel. This means that under hazardous weather climates the rain will still get diverted away, instead of underneath the material.",
+    description:
+      "This is one of our most popular panel brands, and it's due to it being a great choice for both Residential and Commercial, and it is very economical. It's a highly lasting and durable metal roofing panel from start to finish. The manufacturer starts with a high tensile steel, and then coats it with Galvalume zinc-aluminum coating, and then primes it, and adds a layer of baked-on enamel.\n\nIt includes a watertight design that features a built-in water siphon channel. This means that under hazardous weather climates the rain will still get diverted away, instead of underneath the material.",
     specs: [
       "36″ panel coverage",
       "3/4″ trapezoidal ribs on 9″ centers",
@@ -34,7 +50,8 @@ const PANEL_TYPES = [
   },
   {
     name: "R-Panel / PBR Panel",
-    description: "This is the most commonly used Commercial metal roofing/siding panel. Its 1 1/4″ tall ribs are great for coverage and slopes!",
+    description:
+      "This is the most commonly used Commercial metal roofing/siding panel. Its 1 1/4″ tall ribs are great for coverage and slopes!",
     specs: [
       "36″ panel coverage",
       "1 1/4″ trapezoidal ribs on 12″ centers",
@@ -51,7 +68,8 @@ const PANEL_TYPES = [
   },
   {
     name: "5V-Crimp Panel",
-    description: "5V metal roofing panels are known nationwide for being widely used on older homes and barns. Since it was one of the original metal roofs, and has five ribs with a low profile, it makes it a great choice for any roof.",
+    description:
+      "5V metal roofing panels are known nationwide for being widely used on older homes and barns. Since it was one of the original metal roofs, and has five ribs with a low profile, it makes it a great choice for any roof.",
     specs: [
       "24″ panel coverage",
       "1/2″ rib height",
@@ -68,7 +86,8 @@ const PANEL_TYPES = [
   },
   {
     name: "Corrugated Metal Panels",
-    description: "Found all across America, these are known for their wavy style. These metal roofing panels are commonly used with agricultural buildings and have made a comeback by being used for accent walls, and ceilings.",
+    description:
+      "Found all across America, these are known for their wavy style. These metal roofing panels are commonly used with agricultural buildings and have made a comeback by being used for accent walls, and ceilings.",
     specs: [
       "24″ panel coverage",
       "1/4″ or 1/2″ rib height",
@@ -90,9 +109,7 @@ export default function MetalRoofingColorPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Metal Roofing Colors
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Metal Roofing Colors</h1>
           <p className="text-xl text-gray-300">
             Browse our selection of metal roofing colors and panel types
           </p>
@@ -152,10 +169,14 @@ export default function MetalRoofingColorPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                {COMPANY.phone}
+              </a>
             </p>
             <p className="text-xl text-white">
-              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">
+                {COMPANY.email}
+              </a>
             </p>
           </div>
           <Link

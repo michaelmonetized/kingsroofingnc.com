@@ -26,7 +26,9 @@ export function Footer() {
                 height={120}
               />
               <div className="font-display font-bold text-xl uppercase tracking-wide mt-2 text-orange-500">
-                King&apos;s<br />Roofing
+                King&apos;s
+                <br />
+                Roofing
               </div>
             </div>
           </div>
@@ -36,13 +38,19 @@ export function Footer() {
             <h4 className="font-display font-bold text-lg mb-4">Contact Info</h4>
             <div className="space-y-2 text-sm text-gray-300">
               <p>
-                <a href={`tel:${COMPANY.phone}`} className="hover:text-orange-400 flex items-center gap-2">
+                <a
+                  href={`tel:${COMPANY.phone}`}
+                  className="hover:text-orange-400 flex items-center gap-2"
+                >
                   <PiPhoneLight className="w-4 h-4 text-orange-500" />
                   {COMPANY.phone}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${COMPANY.email}`} className="hover:text-orange-400 flex items-center gap-2">
+                <a
+                  href={`mailto:${COMPANY.email}`}
+                  className="hover:text-orange-400 flex items-center gap-2"
+                >
                   <MailIcon className="w-4 h-4 text-orange-500" />
                   {COMPANY.email}
                 </a>
@@ -50,7 +58,12 @@ export function Footer() {
               <p className="text-gray-400 mt-4 text-xs">
                 Someone is available Monday through Saturday to answer all of your questions.
               </p>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline text-sm mt-2 inline-block"
+              >
                 Visit Us on Facebook
               </a>
             </div>
@@ -60,19 +73,41 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/" className="hover:text-orange-400">Home</Link></li>
-              <li><Link href="/about" className="hover:text-orange-400">About</Link></li>
-              <li><Link href="/residential" className="hover:text-orange-400">Residential</Link></li>
-              <li><Link href="/commercial" className="hover:text-orange-400">Commercial</Link></li>
-              <li><Link href="/roofing-color-pickers" className="hover:text-orange-400">Roof Color Picker</Link></li>
-              <li><Link href="/contact" className="hover:text-orange-400">Contact</Link></li>
+              <li>
+                <Link href="/" className="hover:text-orange-400">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-orange-400">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/residential" className="hover:text-orange-400">
+                  Residential
+                </Link>
+              </li>
+              <li>
+                <Link href="/commercial" className="hover:text-orange-400">
+                  Commercial
+                </Link>
+              </li>
+              <li>
+                <Link href="/roofing-color-pickers" className="hover:text-orange-400">
+                  Roof Color Picker
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-orange-400">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Empty or Social */}
-          <div>
-            {/* Social icons row - matching original */}
-          </div>
+          <div>{/* Social icons row - matching original */}</div>
         </div>
       </div>
 
@@ -80,10 +115,25 @@ export function Footer() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-center gap-2">
-            {['pinterest', 'facebook', 'google', 'twitter', 'youtube', 'linkedin', 'instagram', 'houzz', 'angies', 'yelp', 'porch', 'blogger', 'tumblr', 'wordpress'].map((social) => (
-              <a 
+            {[
+              "pinterest",
+              "facebook",
+              "google",
+              "twitter",
+              "youtube",
+              "linkedin",
+              "instagram",
+              "houzz",
+              "angies",
+              "yelp",
+              "porch",
+              "blogger",
+              "tumblr",
+              "wordpress",
+            ].map((social) => (
+              <a
                 key={social}
-                href="#" 
+                href="#"
                 className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
                 aria-label={social}
               >
@@ -97,9 +147,36 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-400">
-          <p>Copyright © 2026 <Link href="/" className="text-orange-500 hover:underline">Kings Roofing</Link>. All rights Reserved.</p>
+          <p>
+            Copyright © 2026{" "}
+            <Link href="/" className="text-orange-500 hover:underline">
+              Kings Roofing
+            </Link>
+            . All rights Reserved.
+          </p>
           <p className="mt-1">
-            <Link href="/sitemap" className="hover:text-orange-400">Sitemap</Link> | <a href="https://hustlelaunch.com" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">Web Design</a> + <a href="https://hustlelaunch.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:underline">Marketing</a> by Hustle Launch.
+            <Link href="/sitemap" className="hover:text-orange-400">
+              Sitemap
+            </Link>{" "}
+            |{" "}
+            <a
+              href="https://hustlelaunch.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:underline"
+            >
+              Web Design
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://hustlelaunch.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-500 hover:underline"
+            >
+              Marketing
+            </a>{" "}
+            by Hustle Launch.
           </p>
         </div>
       </div>
@@ -107,11 +184,20 @@ export function Footer() {
   );
 }
 
-
 function MailIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      />
     </svg>
   );
 }

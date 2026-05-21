@@ -69,51 +69,53 @@ export const MATERIALS = [
 export const NAVIGATION = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { 
-    label: "Residential", 
+  {
+    label: "Residential",
     href: "/residential",
     children: [
       { label: "Asheville", href: "/residential/asheville" },
       { label: "Cashiers", href: "/residential/cashiers" },
       { label: "Highlands", href: "/residential/highlands" },
       { label: "Waynesville", href: "/residential/waynesville" },
-    ]
+    ],
   },
   { label: "Commercial", href: "/commercial" },
-  { 
-    label: "Roofing Color Pickers", 
+  {
+    label: "Roofing Color Pickers",
     href: "/roofing-color-pickers",
     children: [
       { label: "Metal Roofing", href: "/roofing-color-pickers/metal-roofing" },
       { label: "Shingles", href: "/roofing-color-pickers/shingles" },
-    ]
+    ],
   },
-  { 
-    label: "Metal Structures", 
+  {
+    label: "Metal Structures",
     href: "/metal-structures",
     children: [
-      { 
-        label: "Metal Carport Kits", 
+      {
+        label: "Metal Carport Kits",
         href: "/metal-structures/metal-carport-kits",
         children: [
           { label: "Regular Style Metal Carport", href: "/regular-style-metal-carports" },
           { label: "Boxed Eave Style Metal Carport", href: "/boxed-eave-style-metal-carport" },
-          { label: "Vertical Roof Style Metal Carport", href: "/vertical-roof-style-metal-carport" },
-        ]
+          {
+            label: "Vertical Roof Style Metal Carport",
+            href: "/vertical-roof-style-metal-carport",
+          },
+        ],
       },
-      { 
-        label: "Pole Truss Kits", 
+      {
+        label: "Pole Truss Kits",
         href: "/metal-structures/pole-truss-kits",
         children: [
           { label: "Stand Roof Kit", href: "/pole-truss-stand-roof-kit" },
           { label: "Enclosed Kits", href: "/pole-truss-enclosed-kits" },
-        ]
+        ],
       },
-    ]
+    ],
   },
   { label: "Contact", href: "/contact" },
 ] as const;
-
 
 export const LOCATIONS = {
   asheville: {
@@ -121,7 +123,8 @@ export const LOCATIONS = {
     county: "Buncombe County",
     title: "Asheville Roofing Contractor | Kings Roofing, inc.",
     headline: "Asheville Roofing Contractor",
-    intro: "Our roofing contractors are located in the beautiful town of Asheville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
+    intro:
+      "Our roofing contractors are located in the beautiful town of Asheville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Asheville team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
     cta: `For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.`,
   },
@@ -130,7 +133,8 @@ export const LOCATIONS = {
     county: "Haywood County",
     title: "Waynesville Roofing Contractors | Kings Roofing, inc.",
     headline: "Waynesville Roofing Contractors",
-    intro: "Waynesville, NC is our home base. We have been replacing roofs in Haywood County for over a decade. Our roofing contractors are located in the beautiful town of Waynesville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
+    intro:
+      "Waynesville, NC is our home base. We have been replacing roofs in Haywood County for over a decade. Our roofing contractors are located in the beautiful town of Waynesville, NC. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Waynesville roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
     cta: `For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.`,
   },
@@ -139,7 +143,8 @@ export const LOCATIONS = {
     county: "Macon County",
     title: "Highlands Roofing Contractor | Kings Roofing, inc.",
     headline: "Highlands Roofing Contractor",
-    intro: "Highlands is one of the most beautiful areas of Western North Carolina, which is why we love serving the beautiful people that live here. Our Highlands Roofing Contractors are among the most qualified around.",
+    intro:
+      "Highlands is one of the most beautiful areas of Western North Carolina, which is why we love serving the beautiful people that live here. Our Highlands Roofing Contractors are among the most qualified around.",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our Highlands team of quality roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
     cta: `For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.`,
   },
@@ -148,7 +153,8 @@ export const LOCATIONS = {
     county: "Jackson County",
     title: "Cashiers Roofing Contractors | Kings Roofing, inc.",
     headline: "Cashiers Roofing Contractors",
-    intro: "Cashiers is one of our favorite towns in WNC, and we try to serve her wonderful residents as often as possible. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
+    intro:
+      "Cashiers is one of our favorite towns in WNC, and we try to serve her wonderful residents as often as possible. Allow the locally owned Kings Roofing the opportunity to take on your next project!",
     body: "Whether your roof just needs a minor repair or needs to be replaced altogether, our team of quality Highlands roofing contractors can help. New construction and re-roofing are our areas of expertise. Let our roofing contractors put years of experience to work for you at the most reasonable prices around.",
     cta: `For a Free Estimate, Call us at ${COMPANY.phoneAlt} or fill out the form here.`,
   },

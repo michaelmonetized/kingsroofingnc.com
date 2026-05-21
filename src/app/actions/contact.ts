@@ -12,7 +12,7 @@ interface ContactState {
 
 export async function submitContact(
   _prevState: ContactState | null,
-  formData: FormData
+  formData: FormData,
 ): Promise<ContactState> {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
@@ -61,18 +61,26 @@ export async function submitContact(
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Phone:</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;"><a href="tel:${phone}">${phone}</a></td>
               </tr>
-              ${area ? `
+              ${
+                area
+                  ? `
               <tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Area:</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;">${area}</td>
               </tr>
-              ` : ""}
-              ${service ? `
+              `
+                  : ""
+              }
+              ${
+                service
+                  ? `
               <tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Service:</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0;">${service}</td>
               </tr>
-              ` : ""}
+              `
+                  : ""
+              }
             </table>
             
             <h3 style="color: #102a43; margin-top: 30px;">Message</h3>

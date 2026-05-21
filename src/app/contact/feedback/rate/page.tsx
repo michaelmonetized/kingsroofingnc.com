@@ -16,9 +16,7 @@ export default function RatePage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             How Would You Rate Your Experience?
           </h1>
-          <p className="text-xl text-gray-300">
-            Your Feedback Is Very Important To Us…
-          </p>
+          <p className="text-xl text-gray-300">Your Feedback Is Very Important To Us…</p>
         </div>
       </section>
 

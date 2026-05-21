@@ -12,7 +12,7 @@ interface LayoutProps {
 
 /**
  * Layout component with style variants
- * 
+ *
  * Styles:
  * - default: Full chrome with Header + Footer (marketing pages)
  * - minimal: Header only, no footer (forms, single-focus pages)

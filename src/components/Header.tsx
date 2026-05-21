@@ -22,8 +22,15 @@ export function Header() {
       {/* Top bar */}
       <div className="bg-orange-500 text-white py-2 text-sm">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <span className="font-medium">Call for a quote: <a href={`tel:${COMPANY.phone}`} className="font-bold hover:underline">{COMPANY.phone}</a></span>
-          <a href={`mailto:${COMPANY.email}`} className="hidden sm:block hover:underline">{COMPANY.email}</a>
+          <span className="font-medium">
+            Call for a quote:{" "}
+            <a href={`tel:${COMPANY.phone}`} className="font-bold hover:underline">
+              {COMPANY.phone}
+            </a>
+          </span>
+          <a href={`mailto:${COMPANY.email}`} className="hidden sm:block hover:underline">
+            {COMPANY.email}
+          </a>
         </div>
       </div>
 
@@ -112,11 +119,15 @@ export function Header() {
                   {item.children ? (
                     <>
                       <button
-                        onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                        onClick={() =>
+                          setMobileExpanded(mobileExpanded === item.label ? null : item.label)
+                        }
                         className="w-full flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-orange-50 rounded-lg font-medium"
                       >
                         {item.label}
-                        <PiCaretDownLight className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`} />
+                        <PiCaretDownLight
+                          className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? "rotate-180" : ""}`}
+                        />
                       </button>
                       {mobileExpanded === item.label && (
                         <div className="ml-4 border-l-2 border-orange-200 pl-4 mt-1 space-y-1">
@@ -159,6 +170,3 @@ export function Header() {
     </header>
   );
 }
-
-
-

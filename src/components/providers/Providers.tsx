@@ -6,7 +6,7 @@ interface ProvidersProps {
 
 /**
  * Client-side providers wrapper
- * 
+ *
  * Add providers here as needed:
  * - PostHog analytics
  * - Theme provider
@@ -14,9 +14,5 @@ interface ProvidersProps {
  * - etc.
  */
 export function Providers({ children }: ProvidersProps) {
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

@@ -1,3 +1,4 @@
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const csp = [
@@ -6,7 +7,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
   "font-src 'self' data:",
-  "connect-src 'self' https://vitals.vercel-insights.com",
+  "connect-src 'self' https://vitals.vercel-insights.com https://*.sentry.io https://*.posthog.com https://*.i.posthog.com",
   "frame-src 'none'",
   "frame-ancestors 'none'",
   "object-src 'none'",
@@ -39,4 +40,16 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG || "hustle-launch",
+  project: process.env.SENTRY_PROJECT || "kingsroofingnc-com",
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  tunnelRoute: "/monitoring",
+  webpack: {
+    automaticVercelMonitors: true,
+    treeshake: {
+      removeDebugLogging: true,
+    },
+  },
+});

@@ -17,12 +17,10 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-navy-900 to-navy-800 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Get Your Free Quote
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Get Your Free Quote</h1>
             <p className="text-xl text-slate-300">
-              Ready to start your roofing project? Fill out the form below or give us a call. 
-              We respond to all inquiries within 24 hours.
+              Ready to start your roofing project? Fill out the form below or give us a call. We
+              respond to all inquiries within 24 hours.
             </p>
           </div>
         </div>
@@ -37,7 +35,7 @@ export default function ContactPage() {
               <div className="sticky top-24 space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold text-navy-900 mb-6">Contact Information</h2>
-                  
+
                   <div className="space-y-4">
                     <ContactInfo
                       icon={<PiPhoneLight className="w-5 h-5" />}
@@ -79,8 +77,8 @@ export default function ContactPage() {
                     Need Emergency Service?
                   </h3>
                   <p className="text-slate-600 text-sm mb-4">
-                    For urgent roof repairs, call us directly. We offer emergency services 
-                    for storm damage and critical leaks.
+                    For urgent roof repairs, call us directly. We offer emergency services for storm
+                    damage and critical leaks.
                   </p>
                   <a
                     href={`tel:${COMPANY.phone}`}
@@ -98,8 +96,8 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
                 <h2 className="text-2xl font-bold text-navy-900 mb-2">Request a Free Quote</h2>
                 <p className="text-slate-600 mb-8">
-                  Fill out the form below and we&apos;ll get back to you within 24 hours with a 
-                  free estimate for your roofing project.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours with a free
+                  estimate for your roofing project.
                 </p>
                 <ContactForm />
               </div>
@@ -137,5 +135,3 @@ function ContactInfo({
     </a>
   );
 }
-
-

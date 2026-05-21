@@ -5,26 +5,27 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pole Truss Stand Roof Kit | Kings Roofing, inc.",
-  description: "Pole truss stand roof kits for open-air shelters and agricultural structures in Western NC. Durable steel construction from Kings Roofing.",
+  description:
+    "Pole truss stand roof kits for open-air shelters and agricultural structures in Western NC. Durable steel construction from Kings Roofing.",
 };
 
 const USE_CASES = [
   {
-    "title": "Open-Air Pavilions",
-    "desc": "Great for outdoor seating, event coverage, or farm market shelters."
+    title: "Open-Air Pavilions",
+    desc: "Great for outdoor seating, event coverage, or farm market shelters.",
   },
   {
-    "title": "Equipment Staging",
-    "desc": "Keep machinery, baled hay, or lumber dry without full enclosure costs."
+    title: "Equipment Staging",
+    desc: "Keep machinery, baled hay, or lumber dry without full enclosure costs.",
   },
   {
-    "title": "Livestock Shelter",
-    "desc": "Open sides allow airflow while the roof keeps animals dry."
+    title: "Livestock Shelter",
+    desc: "Open sides allow airflow while the roof keeps animals dry.",
   },
   {
-    "title": "Loading Dock Covers",
-    "desc": "Covers loading areas without interfering with forklift access."
-  }
+    title: "Loading Dock Covers",
+    desc: "Covers loading areas without interfering with forklift access.",
+  },
 ];
 
 const SPECS = [
@@ -33,7 +34,7 @@ const SPECS = [
   "Multiple width and length configurations available",
   "Custom heights to suit your application",
   "18 color options",
-  "Engineered for WNC wind and snow loads"
+  "Engineered for WNC wind and snow loads",
 ];
 
 export default function Page() {
@@ -45,13 +46,21 @@ export default function Page() {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Pole Truss Stand Roof Kit</h1>
             <p className="text-xl text-gray-300 mb-8">
-              Our pole truss stand roof kit delivers an open-sided, covered shelter — perfect for picnic pavilions, equipment staging areas, and livestock shelters. Simple steel construction with lasting weather protection.
+              Our pole truss stand roof kit delivers an open-sided, covered shelter — perfect for
+              picnic pavilions, equipment staging areas, and livestock shelters. Simple steel
+              construction with lasting weather protection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold"
+              >
                 Get a Free Quote
               </Link>
-              <a href={`tel:${COMPANY.phone}`} className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold border border-white/20">
+              <a
+                href={`tel:${COMPANY.phone}`}
+                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold border border-white/20"
+              >
                 Call {COMPANY.phone}
               </a>
             </div>
@@ -95,13 +104,20 @@ export default function Page() {
           <h2 className="text-3xl font-bold text-white mb-6">Get Your Free Quote</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                {COMPANY.phone}
+              </a>
             </p>
             <p className="text-xl text-white">
-              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">
+                {COMPANY.email}
+              </a>
             </p>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg"
+          >
             Free Quotes…
           </Link>
         </div>

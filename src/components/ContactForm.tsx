@@ -130,7 +130,8 @@ export function ContactForm() {
       </button>
 
       <p className="text-sm text-slate-500 text-center">
-        We respond to all inquiries within 24 hours. Your information is secure and will never be shared.
+        We respond to all inquiries within 24 hours. Your information is secure and will never be
+        shared.
       </p>
     </form>
   );

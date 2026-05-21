@@ -34,9 +34,7 @@ export function StarRating() {
             onMouseEnter={() => setHovered(star)}
             onMouseLeave={() => setHovered(null)}
             className={`text-5xl transition-colors ${
-              displayRating !== null && star <= displayRating
-                ? "text-orange-500"
-                : "text-gray-300"
+              displayRating !== null && star <= displayRating ? "text-orange-500" : "text-gray-300"
             } hover:text-orange-400 cursor-pointer`}
             aria-label={`Rate ${star} star${star !== 1 ? "s" : ""}`}
           >
@@ -55,9 +53,7 @@ export function StarRating() {
         </p>
       )}
 
-      {!selected && (
-        <p className="text-gray-500 mb-6">Click a star to rate your experience</p>
-      )}
+      {!selected && <p className="text-gray-500 mb-6">Click a star to rate your experience</p>}
 
       <button
         onClick={handleSubmit}

@@ -5,7 +5,8 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Timberline HD Color Shingle Roofing Color Picker | Kings Roofing, inc.",
-  description: "Browse GAF Timberline HD shingle colors - Barkwood, Charcoal, Slate, Weathered Wood and more. Kings Roofing in Western NC.",
+  description:
+    "Browse GAF Timberline HD shingle colors - Barkwood, Charcoal, Slate, Weathered Wood and more. Kings Roofing in Western NC.",
 };
 
 const SHINGLE_COLORS = [
@@ -28,12 +29,8 @@ export default function ShinglesColorPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Shingles
-          </h1>
-          <p className="text-xl text-gray-300">
-            GAF Timberline HD Shingle Colors
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Shingles</h1>
+          <p className="text-xl text-gray-300">GAF Timberline HD Shingle Colors</p>
         </div>
       </section>
 
@@ -59,10 +56,14 @@ export default function ShinglesColorPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                {COMPANY.phone}
+              </a>
             </p>
             <p className="text-xl text-white">
-              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">
+                {COMPANY.email}
+              </a>
             </p>
           </div>
           <Link

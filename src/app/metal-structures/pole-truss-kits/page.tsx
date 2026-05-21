@@ -5,7 +5,8 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pole Truss Kits | Kings Roofing, inc.",
-  description: "Pole barn kits - stand roof and enclosed styles. Quality pole truss kits in Western NC. Call for a quote!",
+  description:
+    "Pole barn kits - stand roof and enclosed styles. Quality pole truss kits in Western NC. Call for a quote!",
 };
 
 export default function PoleTrussKitsPage() {
@@ -14,12 +15,8 @@ export default function PoleTrussKitsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Pole Truss Kits
-          </h1>
-          <p className="text-xl text-gray-300">
-            Quality pole barn kits for your property
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Pole Truss Kits</h1>
+          <p className="text-xl text-gray-300">Quality pole barn kits for your property</p>
         </div>
       </section>
 
@@ -29,14 +26,11 @@ export default function PoleTrussKitsPage() {
           <div className="space-y-16 max-w-4xl mx-auto">
             {/* Stand Roof Kit */}
             <div className="border-b border-gray-200 pb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                Pole Truss Stand Roof Kit
-              </h2>
-              <h3 className="text-xl text-orange-500 font-semibold mb-4">
-                Stand Roof Style
-              </h3>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Pole Truss Stand Roof Kit</h2>
+              <h3 className="text-xl text-orange-500 font-semibold mb-4">Stand Roof Style</h3>
               <p className="text-lg text-gray-700 mb-6">
-                Pole Barn Stand Roof Kit – A Pole Barn Stand Roof, is just the roof closed with the open sides.
+                Pole Barn Stand Roof Kit – A Pole Barn Stand Roof, is just the roof closed with the
+                open sides.
               </p>
               <Link
                 href="/pole-truss-stand-roof-kit"
@@ -48,14 +42,11 @@ export default function PoleTrussKitsPage() {
 
             {/* Enclosed Kit */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                Pole Truss Enclosed Kits
-              </h2>
-              <h3 className="text-xl text-orange-500 font-semibold mb-4">
-                Enclosed Style
-              </h3>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Pole Truss Enclosed Kits</h2>
+              <h3 className="text-xl text-orange-500 font-semibold mb-4">Enclosed Style</h3>
               <p className="text-lg text-gray-700 mb-6">
-                Pole Barn Enclosed Kit – A Pole Barn Enclosed, is closed from the roof and all sides with an adding of doors and windows of your choice.
+                Pole Barn Enclosed Kit – A Pole Barn Enclosed, is closed from the roof and all sides
+                with an adding of doors and windows of your choice.
               </p>
               <Link
                 href="/pole-truss-enclosed-kits"
@@ -74,10 +65,14 @@ export default function PoleTrussKitsPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Contact Us Today!</h2>
           <div className="space-y-4 mb-8">
             <p className="text-2xl text-white font-semibold">
-              <a href={`tel:${COMPANY.phone}`} className="hover:underline">{COMPANY.phone}</a>
+              <a href={`tel:${COMPANY.phone}`} className="hover:underline">
+                {COMPANY.phone}
+              </a>
             </p>
             <p className="text-xl text-white">
-              <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+              <a href={`mailto:${COMPANY.email}`} className="hover:underline">
+                {COMPANY.email}
+              </a>
             </p>
           </div>
           <Link

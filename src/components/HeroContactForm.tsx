@@ -20,9 +20,7 @@ export function HeroContactForm() {
   return (
     <form action={formAction} className="space-y-3">
       {state?.error && (
-        <div className="bg-red-500/90 text-white px-3 py-2 rounded-lg text-sm">
-          {state.error}
-        </div>
+        <div className="bg-red-500/90 text-white px-3 py-2 rounded-lg text-sm">{state.error}</div>
       )}
 
       <input

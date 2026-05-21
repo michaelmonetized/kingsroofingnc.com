@@ -3,29 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "bun scripts/dev-localhost.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "bun scripts/lint.mts",
     "test": "echo \"TODO: Add Jest testing framework\" && exit 0",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsgo --noEmit",
+    "dev:raw": "next dev",
+    "dev:info": "bun scripts/dev-localhost-info.mjs",
+    "lint:fix": "bun scripts/lint.mts",
+    "format": "biome format --write .",
+    "tsc": "tsgo --noEmit",
+    "check": "bun lint",
+    "ship": "bun scripts/ship.mts"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.53.1",
     "next": "16.1.6",
+    "posthog-js": "^1.374.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
     "resend": "^6.9.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.15",
     "@tailwindcss/postcss": "^4",
+    "@types/bun": "^1.3.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript/native-preview": "7.0.0-dev.20260512.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "jsonc-parser": "^3.3.1",
+    "oxlint": "^1.64.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "6.0.3"
   },
   "ignoreScripts": [
     "sharp",
@@ -34,5 +48,6 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
-  ]
+  ],
+  "packageManager": "bun@1.3.1"
 }
